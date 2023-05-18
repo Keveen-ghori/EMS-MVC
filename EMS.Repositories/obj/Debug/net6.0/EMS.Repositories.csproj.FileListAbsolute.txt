@@ -1,0 +1,15 @@
+H:\EMS\EMS.Repositories\bin\Debug\net6.0\EMS.Repositories.deps.json
+H:\EMS\EMS.Repositories\bin\Debug\net6.0\EMS.Repositories.dll
+H:\EMS\EMS.Repositories\bin\Debug\net6.0\EMS.Repositories.pdb
+H:\EMS\EMS.Repositories\bin\Debug\net6.0\EMS.Core.dll
+H:\EMS\EMS.Repositories\bin\Debug\net6.0\EMS.Core.pdb
+H:\EMS\EMS.Repositories\obj\Debug\net6.0\EMS.Repositories.csproj.AssemblyReference.cache
+H:\EMS\EMS.Repositories\obj\Debug\net6.0\EMS.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+H:\EMS\EMS.Repositories\obj\Debug\net6.0\EMS.Repositories.AssemblyInfoInputs.cache
+H:\EMS\EMS.Repositories\obj\Debug\net6.0\EMS.Repositories.AssemblyInfo.cs
+H:\EMS\EMS.Repositories\obj\Debug\net6.0\EMS.Repositories.csproj.CoreCompileInputs.cache
+H:\EMS\EMS.Repositories\obj\Debug\net6.0\EMS.Repositories.csproj.CopyComplete
+H:\EMS\EMS.Repositories\obj\Debug\net6.0\EMS.Repositories.dll
+H:\EMS\EMS.Repositories\obj\Debug\net6.0\refint\EMS.Repositories.dll
+H:\EMS\EMS.Repositories\obj\Debug\net6.0\EMS.Repositories.pdb
+H:\EMS\EMS.Repositories\obj\Debug\net6.0\ref\EMS.Repositories.dll

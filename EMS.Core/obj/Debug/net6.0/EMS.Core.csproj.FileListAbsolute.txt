@@ -1,0 +1,12 @@
+H:\EMS\EMS.Core\bin\Debug\net6.0\EMS.Core.deps.json
+H:\EMS\EMS.Core\bin\Debug\net6.0\EMS.Core.dll
+H:\EMS\EMS.Core\bin\Debug\net6.0\EMS.Core.pdb
+H:\EMS\EMS.Core\obj\Debug\net6.0\EMS.Core.csproj.AssemblyReference.cache
+H:\EMS\EMS.Core\obj\Debug\net6.0\EMS.Core.GeneratedMSBuildEditorConfig.editorconfig
+H:\EMS\EMS.Core\obj\Debug\net6.0\EMS.Core.AssemblyInfoInputs.cache
+H:\EMS\EMS.Core\obj\Debug\net6.0\EMS.Core.AssemblyInfo.cs
+H:\EMS\EMS.Core\obj\Debug\net6.0\EMS.Core.csproj.CoreCompileInputs.cache
+H:\EMS\EMS.Core\obj\Debug\net6.0\EMS.Core.dll
+H:\EMS\EMS.Core\obj\Debug\net6.0\refint\EMS.Core.dll
+H:\EMS\EMS.Core\obj\Debug\net6.0\EMS.Core.pdb
+H:\EMS\EMS.Core\obj\Debug\net6.0\ref\EMS.Core.dll

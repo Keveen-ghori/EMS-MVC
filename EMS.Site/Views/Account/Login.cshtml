@@ -1,0 +1,51 @@
+﻿@model EmployeeViewModel
+@using EMS.Core.Constants
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+    ViewData["Title"] = "Employee Login";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - EMS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Account.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="login-page">
+                <div class="form">
+                    <form class="login-form needs-validation" method="post" novalidate>
+                        <div class="form-group">
+                            <input asp-for="@Model.Employee.UserName" class="form-control" value="" required/>
+                            <label asp-for="@Model.Employee.UserName" class="form-label"></label>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="@Model.Employee.Password" class="form-control" value="" required>
+                            <label asp-for="@Model.Employee.Password" class="form-label"></label>
+                        </div>
+                        <button type="submit">Login</button>
+                        <p class="message">Not registered? <a href="@Url.Action(Actions.Register, Controllors.Account)">Create an account</a></p>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/BootstrapValidation.js"></script>
+    @section scripts{
+        <partial name="_ValidationScriptsPartial.cshtml" />
+
+
+    }
+
+</body>
+</html>

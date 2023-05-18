@@ -1,0 +1,50 @@
+﻿@using EMS.Core.Constants
+@model EMS.Site.Models.EmployeeViewModel;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Employee Registration";
+    DateTime today = DateTime.Now;
+}
+
+<div class="form">
+    <form class="register-form needs-validation" method="post" novalidate>
+        <div class="form-group">
+            <input asp-for="@Model.Employee.FirstName" value="" class="form-control" required>
+            <label asp-for="@Model.Employee.FirstName" class="form-label"></label>            
+        </div>
+        <div class="form-group">
+            <input asp-for="@Model.Employee.LastName" class="form-control" required>
+            <label asp-for="@Model.Employee.LastName" class="form-label"></label>
+        </div>
+        <div class="form-group">
+            <input asp-for="@Model.Employee.Email" class="form-control" required>
+            <label asp-for="@Model.Employee.Email"class="form-label"></label>
+            
+        </div>
+        <div class="form-group">
+            <input asp-for="@Model.Employee.DOB" class="form-control" max="@today.ToString("yyyy-MM-dd")" required>
+            <label asp-for="@Model.Employee.DOB" class="form-label"></label>
+            
+        </div>
+        <div class="form-group">
+            <select asp-for="@Model.Employee.Gender" class="form-control select minimal" style="Padding: 15px;" required>
+                <option value="" hidden></option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Unisex</option>
+            </select>
+            <label asp-for="@Model.Employee.Gender" class="form-label"></label>
+        </div>
+        <div class="form-group">
+            <input asp-for="@Model.Employee.Password" class="form-control" required>
+            <label asp-for="@Model.Employee.Password" class="form-label"></label>
+        </div>
+        <div class="form-group">
+            <input asp-for="@Model.Employee.ConfirmPassword" class="form-control" required>
+            <label asp-for="@Model.Employee.ConfirmPassword" class="form-label"></label>
+        </div>
+        <button type="submit">Register</button>
+        <p class="message">Already registered? <a href="@Url.Action(Actions.Login,Controllors.Account)">Sign In</a></p>
+    </form>
+</div>
+0
