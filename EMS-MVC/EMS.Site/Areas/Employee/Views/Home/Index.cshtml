@@ -1,6 +1,12 @@
-﻿@*
+﻿@using EMS.Core.Constants;
+
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    var httpContext = Context.Request.HttpContext;
+    var username = httpContext.Session.GetString("Uname");
+    Layout = "~/Areas/Employee/Views/Shared/_Layout1.cshtml";
+    ViewData["Title"] = Resourses.EmpHome;
 }
-<h2>Welcome User</h2>
+<h2>Welcome @username</h2>

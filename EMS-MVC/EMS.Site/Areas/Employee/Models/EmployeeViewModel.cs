@@ -13,6 +13,6 @@ namespace EMS.Site.Areas.Employee.Models
         }
         public Employees Employee { get; set; }
 
-
+       
     }
 }

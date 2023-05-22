@@ -5,24 +5,40 @@
       "PackagePath": "staticwebassets\\EMS.Site.bundle.scp.css"
     },
     {
-      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\css\\Account.css",
-      "PackagePath": "staticwebassets\\css\\Account.css"
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\css\\Dashboard.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\Dashboard.css"
     },
     {
-      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\css\\Login.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\Login.css"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\css\\Register.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\Register.css"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\BootstrapValidation.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\BootstrapValidation.js"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Employee\\css\\Login.css",
+      "PackagePath": "staticwebassets\\Employee\\css\\Login.css"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Employee\\css\\Register.css",
+      "PackagePath": "staticwebassets\\Employee\\css\\Register.css"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Employee\\js\\BootstrapValidation.js",
+      "PackagePath": "staticwebassets\\Employee\\js\\BootstrapValidation.js"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Employee\\js\\site.js",
+      "PackagePath": "staticwebassets\\Employee\\js\\site.js"
     },
     {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
-    },
-    {
-      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\js\\BootstrapValidation.js",
-      "PackagePath": "staticwebassets\\js\\BootstrapValidation.js"
-    },
-    {
-      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\bootstrap\\LICENSE",

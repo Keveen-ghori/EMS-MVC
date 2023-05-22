@@ -53,16 +53,30 @@ namespace EMS.Repository.EF
         public DateTime? Deleted_At { get; set; }
         public DateTime? Updated_At { get; set; }
         public int? Attemps { get; set; } = 0;
-        public int? Total_Attemps { get; set; } = 0;
-        public bool? Status { get; set; } = false;
-        public bool? IsLocked { get; set; } = false;
+        public int? Total_Attemps { get; set; } = 3;
+        public bool Status { get; set; } = true;
+        public bool IsLocked { get; set; } = false;
 
-        [Display(Name =Resourses.UserName)]
+        [Display(Name = Resourses.UserName)]
         public string? UserName { get; set; } = String.Empty;
 
-        //[NotMapped]
-        //[Display(Name = Resourses.NameOrEmail)]
-        //[Required(ErrorMessage = SystemMessages.UserOrEmailRequired)]
-        //public string UserOrEmail { get; set; } = string.Empty;
+        [NotMapped]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = SystemMessages.PasswordRequired)]
+        [Display(Name = Resourses.Password)]
+        public string? LoginPassword { get; set; } = nameof(Password);
+
+        public int Exp_Days { get; set; } = 7;
+
+        public DateTime Password_Updated_At { get; set; } = DateTime.Now;
+
+        [NotMapped]
+        public bool PasswordUpdated { get; set; } = false;
+
+        [NotMapped]
+        public bool isUserExists { get; set; } = false;
+
+
+
     }
 }

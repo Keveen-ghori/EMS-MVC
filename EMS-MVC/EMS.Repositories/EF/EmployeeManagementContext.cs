@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EMS.Repositories.EF;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,6 @@ namespace EMS.Repository.EF
         }
 
         public virtual DbSet<Employees> Employees { get; set;}
+        public virtual DbSet<Admins> Admin { get; set; }
     }
 }

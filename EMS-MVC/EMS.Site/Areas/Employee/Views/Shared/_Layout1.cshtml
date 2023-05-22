@@ -1,0 +1,47 @@
+﻿@using EMS.Core.Constants;
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Employee</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 
+    <link href="~/toastr.js/toastr.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Admin/js/BootstrapValidation.js"></script>
+    <script src="~/toastr.js/toastr.min.js"></script>
+    @if (TempData.ContainsKey(ToastrMessages.EmpLoginSuccess))
+    {
+        <script>
+            toastr.options = {
+                positionClass: 'toast-top-left'
+            };
+            toastr.success('@ToastrMessages.EmpLoginSuccess');
+        </script>
+        TempData.Remove(ToastrMessages.EmpLoginSuccess);
+    }
+
+    @if (TempData.ContainsKey(ToastrMessages.EmpSuccessfullyUpdatedPassword))
+    {
+        <script>
+            toastr.options = {
+                positionClass: 'toast-top-left'
+            };
+            toastr.success('@ToastrMessages.EmpSuccessfullyUpdatedPassword');
+        </script>
+        TempData.Remove(ToastrMessages.EmpSuccessfullyUpdatedPassword);
+    }
+
+    <partial name="_ValidationScriptsPartial" />
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

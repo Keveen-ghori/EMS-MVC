@@ -8,19 +8,17 @@
 
   <ItemGroup>
     <Content Remove="Areas\Admin\Views\_ValidationScriptsPartial.cshtml" />
-    <Content Remove="Areas\Admin\Views\_ViewImports.cshtml" />
     <Content Remove="Areas\Employee\Views\_ValidationScriptsPartial.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Areas\Admin\Views\Shared\Error.cshtml" />
-    <None Include="Areas\Admin\Views\_ValidationScriptsPartial.cshtml" />
-    <None Include="Areas\Admin\Views\_ViewImports.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml" />
     <None Include="Areas\Employee\Views\Shared\_Layout.cshtml" />
-    <None Include="Areas\Employee\Views\_ValidationScriptsPartial.cshtml" />
+    <None Include="Areas\Employee\Views\Shared\_ValidationScriptsPartial.cshtml" />
     <None Include="_ValidationScriptsPartial.cshtml" />
     <None Include="Areas\Employee\Views\_ViewStart.cshtml" />
-    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\Employee\js\site.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />

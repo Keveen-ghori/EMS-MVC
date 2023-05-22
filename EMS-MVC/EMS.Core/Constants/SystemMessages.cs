@@ -28,6 +28,10 @@ namespace EMS.Core.Constants
         public const string UserOrEmailRequired = "User name or Email is required.";
         public const string Block = "You account is blocked. plese connect to admin.";
         public const string RegisterSuccess = "Successfully registered. Login to your account.";
+        public const string Expired = "Need to Update Password";
+        public const string UserNotExists = "Email address and password is wrong.";
+        public const string OldPassword = "Please provide old password.";
+        public const string NewPassword = "Please provide new password.";
         #endregion
     }
 }

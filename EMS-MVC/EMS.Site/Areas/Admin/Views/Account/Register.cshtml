@@ -1,0 +1,72 @@
+﻿@using EMS.Core.Constants
+@using EMS.Site.Areas.Admin.Models;
+@model AdminViewModel;
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = Resourses.AdmRegister;
+    DateTime today = DateTime.Now;
+}
+<div class="form">
+    <form class="register-form needs-validation" asp-asp-controller="@Controllors.Account" asp-action="@Actions.Register" method="post" novalidate>
+        <h2>Create an account</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input asp-for="@Model.Admin.FirstName" value="" class="form-control" required>
+                        <label asp-for="@Model.Admin.FirstName" class="form-label control-label"></label>
+                        <span asp-validation-for="@Model.Admin.FirstName" class="text-danger my-validation"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <input asp-for="@Model.Admin.LastName" value="" class="form-control" required>
+                        <label asp-for="@Model.Admin.LastName" class="form-label control-label"></label>
+                        <span asp-validation-for="@Model.Admin.LastName" class="text-danger my-validation"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <dv class="col">
+                    <div class="form-group">
+                        <input asp-for="@Model.Admin.Email" class="form-control" required>
+                        <label asp-for="@Model.Admin.Email" class="form-label control-label"></label>
+                        <span asp-validation-for="@Model.Admin.Email" class="text-danger my-validation"></span>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input asp-for="@Model.Admin.DOB" class="form-control" max="@today.ToString("yyyy-MM-dd")" required>
+                        <label asp-for="@Model.Admin.DOB" class="form-label control-label"></label>
+                        <span asp-validation-for="@Model.Admin.DOB" class="text-danger my-validation"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <select asp-for="@Model.Admin.Gender" class="form-control select minimal" style="Padding: 15px;" required>
+                            <option value="" hidden></option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                            <option value="3">Unisex</option>
+                        </select>
+                        <label asp-for="@Model.Admin.Gender" class="form-label control-label"></label>
+                        <span asp-validation-for="@Model.Admin.Gender" class="text-danger my-validation"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input asp-for="@Model.Admin.Password" class="form-control" required>
+                <label asp-for="@Model.Admin.Password" class="form-label control-label"></label>
+                <span asp-validation-for="@Model.Admin.Password" class="text-danger cus-validation"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="@Model.Admin.ConfirmPassword" class="form-control" required>
+                <label asp-for="@Model.Admin.ConfirmPassword" class="form-label control-label"></label>
+                <span asp-validation-for="@Model.Admin.ConfirmPassword" class="text-danger cus-validation"></span>
+            </div>
+            <button type="submit">Register</button>
+            <p class="message">Already registered? <a href="@Url.Action(Actions.Login,Controllors.Account)">Sign In</a></p>
+        </div>
+    </form>
+</div>

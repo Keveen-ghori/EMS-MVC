@@ -23,15 +23,29 @@ namespace EMS.Core.Constants
         #endregion
 
         #region Admin
-        public const string AdminTitle = "Admin dashboard";
+        public const string AdmLogin = "Admin Login";
+        public const string AdmRegister = "Admin Register";
         #endregion
 
         #region Login
         public const string EmpLogin = "Employee Login";
-        public const string EmailExist = "Email Exists";
-        public const string EmailNotFound = "Email Not Found";
-        public const string LoginSuccess = "Login Success";
+        public const string EmpRegister = "Employee Registration";
         public const string NameOrEmail = "Username/ Email";
+        #endregion
+
+        #region PasswordUpdate
+        public const string EmpUpdatePassTitle = "Update Password";
+        public const string AdmnUpdatePassTitle = "Update Password";
+        public const string OldPassword = "Old Password";
+        public const string NewPassword = "New Password";
+        #endregion
+
+        #region Admin Dashboard
+        public const string AdminDash = "Admin Dashboard";
+        #endregion
+
+        #region Employee Home
+        public const string EmpHome = "Employee";
         #endregion
     }
 }

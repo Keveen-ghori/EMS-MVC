@@ -43,10 +43,11 @@ app.UseEndpoints(endpoints =>
 
     // Set default URL to employee login page
     endpoints.MapControllerRoute(
-        name: "Default",
-        pattern: "",
-        defaults: new { area = "Employee", controller = "Account", action = "Login" }
-    );
+    name: "Default",
+    pattern: "{area}/{controller}/{action}/{id?}",
+    defaults: new { area = "Employee", controller = "Account", action = "Login" }
+);
+
 });
 
 

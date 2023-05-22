@@ -11,5 +11,6 @@ namespace EMS.Core.Constants
         public const string Login = "Login";
         public const string Register = "Register";
         public const string Index = "Index";
+        public const string UpdatePass = "UpdatePassword";
     }
 }

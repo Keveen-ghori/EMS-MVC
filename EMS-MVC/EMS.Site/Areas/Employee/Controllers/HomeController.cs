@@ -11,11 +11,15 @@ namespace EMS.Site.Areas.Employee.Controllers
         [ActionName(Actions.Index)]
         public IActionResult Index()
         {
-            if(HttpContext.Session.GetInt32("EmpId") == 0)
+            if (HttpContext.Session.GetInt32("EmpId") != null && HttpContext.Session.GetString("empPassUpdated") == "Yes")
             {
-                return RedirectToAction(Actions.Login, Controllors.Account);
+                return View();
             }
-            return View();
+            else if (HttpContext.Session.GetString("empPassUpdated") == "No")
+            {
+                return RedirectToAction(Actions.UpdatePass, Controllors.Account);
+            }
+            return RedirectToAction(Actions.Login, Controllors.Account);
         }
     }
 }

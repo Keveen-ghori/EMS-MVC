@@ -5,18 +5,48 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@Resourses.AdminTitle - EMS</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />  
+    <title>@ViewBag.Title - EMS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 
+    <link href="~/admin/css/Register.css" rel="stylesheet" />
+    <link href="~/toastr.js/toastr.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="width: 650px;">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/BootstrapValidation.js"></script>
+    <script src="~/Admin/js/BootstrapValidation.js"></script>
+    <script src="~/toastr.js/toastr.min.js"></script>
+
+    @if (TempData.ContainsKey(ToastrMessages.NeedAdminUpdatePass))
+    {
+        <script>
+            toastr.options = {
+                positionClass: 'toast-top-left'
+            };
+            toastr.error('@ToastrMessages.NeedAdminUpdatePass');
+        </script>
+        TempData.Remove(ToastrMessages.NeedAdminUpdatePass);
+    }
+
+
+    @if (TempData.ContainsKey(ToastrMessages.AdminExists))
+    {
+        <script>
+            toastr.options = {
+                positionClass: 'toast-top-left'
+            };
+            toastr.error('@ToastrMessages.AdminExists');
+        </script>
+        @TempData.Remove(ToastrMessages.AdminExists)
+    }
+
+   
+    <partial name="_ValidationScriptsPartial" />
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap');
+
 :root {
     --clr-primary: #10a37f;
     --clr-neutral-200: #c2c8d0;
@@ -7,13 +9,11 @@
 }
 
 .form {
-    position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 450px;
     margin: 0 auto 100px;
-    padding: 45px;
-    text-align: center;
+    padding: 20px;
+    text-align: left;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     --spacing-default: 16px;
     --spacing-top: var(--spacing-default);
@@ -27,10 +27,11 @@
 
 .form-group {
     position: relative;
+    margin-top: 5px;
 }
 
 .form input, select {
-    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
     outline: 0;
     width: 100%;
     border: 1px solid var(--clr-neutral-200);
@@ -47,7 +48,7 @@
     }
 
 .form button {
-    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
     text-transform: uppercase;
     outline: 0;
     background: #3181d2;
@@ -80,17 +81,19 @@
 
 body {
     background: linear-gradient(90deg, #0f56a6 0%, #3181d2 50%);
-    font-family: "Roboto", sans-serif;
+    font-family: "Nunito", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-input,select,
+input, select,
 button[type="submit"] {
     border-radius: var(--br);
     padding-block: var(--spacing-top) var(--spacing-bottom);
     padding-inline: var(--spacing-right) var(--spacing-left);
     font: inherit;
+    box-shadow: 1.97px 2.26px 4px #0000000d !important;
+    border: 1px solid #d9d9d9 !important;
 }
 
 label {
@@ -123,7 +126,7 @@ input[type=date]:focus::-webkit-datetime-edit {
     color: black !important;
 }
 
-.select {
+.select, input {
     box-shadow: 1.97px 2.26px 4px #0000000d !important;
     border: 1px solid #d9d9d9 !important;
     border-radius: 3px !important;
@@ -144,3 +147,14 @@ select.minimal {
         border-color: #3181d2;
         outline: 0;
     }
+
+.form .register-form h2 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+}
