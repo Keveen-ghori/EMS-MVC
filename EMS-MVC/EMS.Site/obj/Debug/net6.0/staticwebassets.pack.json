@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\EMS.Site.bundle.scp.css"
     },
     {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\Images\\profile-80.png",
+      "PackagePath": "staticwebassets\\Admin\\Images\\profile-80.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\Images\\tom-hanks.png",
+      "PackagePath": "staticwebassets\\Admin\\Images\\tom-hanks.png"
+    },
+    {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\css\\Dashboard.css",
       "PackagePath": "staticwebassets\\Admin\\css\\Dashboard.css"
     },

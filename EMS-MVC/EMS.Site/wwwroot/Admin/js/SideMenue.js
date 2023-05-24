@@ -36,26 +36,22 @@
             $(".profile-hover").toggle();
         });
 
-        $(".tooltip_nav a").each(function () {
-            let linkUrl = $(this).attr("href");
-            let currentUrl = window.location.href;
+    });
 
-            if (linkUrl === currentUrl || linkUrl.split('?')[0] === currentUrl.split('?')[0]) {
-                $(this).closest("li").addClass("active");
-            }
-        });
+});
+$(document).ready(function () {
+    let path = window.location.pathname;
+    console.log("path:", path);
 
-        $(".tooltip_nav a").click(function (e) {
-            e.preventDefault(); 
+    $('ul.leftMenuList li').removeClass('active');
 
-            $(".tooltip_nav").removeClass("active");
+    $('ul.leftMenuList li').each(function () {
+        let link = $(this).find('a').attr('href');
+        console.log("link:", link);
 
-            $(this).closest("li").addClass("active");
-
-            let url = $(this).attr("href");
-
-            window.location.href = url;
-        });
+        if (link && link === path) {
+            $(this).addClass('active');
+        }
     });
 });
 
