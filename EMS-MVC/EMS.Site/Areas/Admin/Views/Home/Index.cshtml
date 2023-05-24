@@ -5,7 +5,11 @@
 @{
     Layout = "~/Areas/Admin/Views/Shared/_Layout1.cshtml";
     ViewData["Title"] = Resourses.AdminDash;
+    var httpContext = Context.Request.HttpContext;
+    var username = httpContext.Session.GetString("AdminUsername");
 }
 
-<h2>Welcome Admin</h2>
-
+<h1>
+    Welcome
+    <small>@username</small>
+</h1>

@@ -15,6 +15,8 @@ namespace EMS.Site.Areas.Admin.Controllers
             _context = context;
         }
 
+        [ActionName(Actions.Index)]
+        [HttpGet]
         public IActionResult Index()
         {
             if(HttpContext.Session.GetInt32("AdmnId") != null && HttpContext.Session.GetString("AdmnPassUpdated") == "Yes")
@@ -26,6 +28,11 @@ namespace EMS.Site.Areas.Admin.Controllers
                 return RedirectToAction(Actions.UpdatePass, Controllors.Account);
             }
             return RedirectToAction(Actions.Login, Controllors.Account);
+        }
+
+        public IActionResult Employee()
+        {
+            return View();
         }
     }
 }

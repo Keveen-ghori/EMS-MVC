@@ -46,6 +46,7 @@ namespace EMS.Core.Constants
 
         #region Employee Home
         public const string EmpHome = "Employee";
+        public const string EmpManagement = "Employee Management";
         #endregion
     }
 }

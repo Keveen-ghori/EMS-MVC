@@ -5,21 +5,88 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title - Admin</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="~/admin/css/Dashboard.css" rel="stylesheet" />
     <link href="~/toastr.js/toastr.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/admin/css/Sidemenue.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="skin-blue-black">
+        <div class="wrapper">
+            <header class="main-header col-lg-12">
+                <span class="logo-mid">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1818275/profile/profile-80.jpg" />EMS
+                </span>
+                <div class="fa-solid fa-bars-staggered" id="menu_bar"></div>
+
+                <div class="user-profile me-4">
+                    <span>Tom Hanks<br>Admin</span>
+                    <div class="mini-user">
+                        <img src="https://media.cnn.com/api/v1/images/stellar/prod/220616144714-tom-hanks-file-053122.jpg?c=4x3">
+                    </div>
+                </div>
+            </header>
+            <div class="leftMenu">
+                <ul class="leftMenuList">
+                    <li class="active tooltip_nav point01">
+                        <a asp-action="@Actions.Index" asp-controller="@Controllors.Home">
+                            <i class="fa fa-dashboard" aria-hidden="true"></i>
+                            <span>Dashboard</span>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="tooltip_nav point02">
+                        <a asp-action="@Actions.Employee" asp-controller="@Controllors.Home">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            <span>Employee</span>
+                            <p>Employee</p>
+                        </a>
+                    </li>
+                    <li class="tooltip_nav point04">
+                        <a href="#">
+                            <i class="fa fa-building" aria-hidden="true"></i>
+                            <span>Companies</span>
+                            <p>Companies</p>
+                        </a>
+                    </li>
+                    <li class="tooltip_nav point05">
+                        <a href="#">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+                            <span>Documents</span>
+                            <p>Documents</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <!-- Main content -->
+                <section class="content">
+                    @RenderBody()
+                </section><!-- /.content -->
+            </div><!-- /.content-wrapper -->
+            <div class="profile-hover">
+                <div class="user-profile-icon">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/220616144714-tom-hanks-file-053122.jpg?c=4x3">
+                </div>
+                <div class="user-profile">
+                    <span class="">Tom Hanks</span><br>
+                    <span class="">Admin</span>
+                    <h1>LogOut</h1>
+                </div>
+            </div>
+        </div>
+        <div class="popup-overlay"></div>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/Admin/js/BootstrapValidation.js"></script>
     <script src="~/toastr.js/toastr.min.js"></script>
-
+    <script src="~/admin/js/SideMenue.js"></script>
     @if (TempData.ContainsKey(ToastrMessages.AdminLoginSuccess))
     {
         <script>
