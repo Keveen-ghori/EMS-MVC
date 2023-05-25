@@ -214,5 +214,15 @@ namespace EMS.Site.Areas.Admin.Controllers
             }
         }
         #endregion
+
+        #region Logout
+        [HttpGet]
+        [ActionName(Actions.Logout)]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction(Actions.Login);
+        }
+        #endregion
     }
 }

@@ -19,7 +19,13 @@ namespace EMS.Repository.EF
         {
         }
 
-        public virtual DbSet<Employees> Employees { get; set;}
+        public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Admins> Admin { get; set; }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+
+        //    modelBuilder.Entity<Employees>(entity => entity.HasNoKey());
+        //}
     }
 }

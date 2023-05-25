@@ -10,6 +10,7 @@
         "dependencies": {
           "EMS.Core": "1.0.0",
           "EMS.Repositories": "1.0.0",
+          "Microsoft.AspNet.Mvc": "5.2.9",
           "Microsoft.AspNet.WebPages": "3.2.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13"
@@ -89,6 +90,18 @@
         }
       },
       "MessagePackAnalyzer/2.1.152": {},
+      "Microsoft.AspNet.Mvc/5.2.9": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.9",
+          "Microsoft.AspNet.WebPages": "3.2.9"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Mvc.dll": {
+            "assemblyVersion": "5.2.9.0",
+            "fileVersion": "5.2.61129.10"
+          }
+        }
+      },
       "Microsoft.AspNet.Razor/3.2.9": {
         "runtime": {
           "lib/net45/System.Web.Razor.dll": {
@@ -2456,6 +2469,13 @@
       "sha512": "sha512-uJhZlGMkXDaFYsH8V9S6o1EyvsUqB9mpU4DVBXNr0DXZVzZMhuLP1IkLj5xK3EKlaAcvkFkZv3eSvuz360wb3Q==",
       "path": "messagepackanalyzer/2.1.152",
       "hashPath": "messagepackanalyzer.2.1.152.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Mvc/5.2.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bcekKshCAh7kTWSMZPavQStSZQF/QmjEjO2gVWGITEd0/t5eRlb+ZLDE+az2qY1bZ8L6Hz0OCNeS0uzXtJcK5w==",
+      "path": "microsoft.aspnet.mvc/5.2.9",
+      "hashPath": "microsoft.aspnet.mvc.5.2.9.nupkg.sha512"
     },
     "Microsoft.AspNet.Razor/3.2.9": {
       "type": "package",

@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\Admin\\css\\Dashboard.css"
     },
     {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\css\\EmployeeLists.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\EmployeeLists.css"
+    },
+    {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\css\\Login.css",
       "PackagePath": "staticwebassets\\Admin\\css\\Login.css"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\BootstrapValidation.js",
       "PackagePath": "staticwebassets\\Admin\\js\\BootstrapValidation.js"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\Pagination.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\Pagination.js"
     },
     {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\SideMenue.js",
@@ -455,6 +463,94 @@
     {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\css\\mdb.css",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\css\\mdb.css"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\css\\mdb.lite.css",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\css\\mdb.lite.css"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\css\\mdb.lite.min.css",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\css\\mdb.lite.min.css"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\css\\mdb.lite.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\css\\mdb.lite.min.css.map"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\css\\mdb.min.css",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\css\\mdb.min.css"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\css\\mdb.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\css\\mdb.min.css.map"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\overlays\\01.png",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\overlays\\01.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\overlays\\02.png",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\overlays\\02.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\overlays\\03.png",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\overlays\\03.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\overlays\\04.png",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\overlays\\04.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\overlays\\05.png",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\overlays\\05.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\overlays\\06.png",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\overlays\\06.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\overlays\\07.png",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\overlays\\07.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\overlays\\08.png",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\overlays\\08.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\overlays\\09.png",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\overlays\\09.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\svg\\arrow_left.svg",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\svg\\arrow_left.svg"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\svg\\arrow_right.svg",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\svg\\arrow_right.svg"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\img\\svg\\flags.png",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\img\\svg\\flags.png"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\js\\mdb.js",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\js\\mdb.js"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\js\\mdb.lite.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\js\\mdb.lite.min.js.map"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\js\\mdb.min.js",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\js\\mdb.min.js"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\lib\\mdbbootstrap\\js\\mdb.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\mdbbootstrap\\js\\mdb.min.js.map"
     },
     {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\toastr.js\\toastr.css",

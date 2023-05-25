@@ -41,14 +41,11 @@
 });
 $(document).ready(function () {
     let path = window.location.pathname;
-    console.log("path:", path);
 
     $('ul.leftMenuList li').removeClass('active');
 
     $('ul.leftMenuList li').each(function () {
         let link = $(this).find('a').attr('href');
-        console.log("link:", link);
-
         if (link && link === path) {
             $(this).addClass('active');
         }

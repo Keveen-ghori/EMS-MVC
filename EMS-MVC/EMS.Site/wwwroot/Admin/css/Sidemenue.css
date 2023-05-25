@@ -476,7 +476,7 @@ ul {
     margin-bottom: 1px;
 }
 
-    .profile-hover h1:hover {
+    .profile-hover a:hover {
         cursor: pointer;
     }
 

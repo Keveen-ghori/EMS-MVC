@@ -81,10 +81,10 @@ H:\EMS\EMS\obj\Debug\net6.0\refint\EMS.Site.dll
 H:\EMS\EMS\obj\Debug\net6.0\EMS.Site.pdb
 H:\EMS\EMS\obj\Debug\net6.0\EMS.Site.genruntimeconfig.cache
 H:\EMS\EMS\obj\Debug\net6.0\ref\EMS.Site.dll
-D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.Common.dll
-D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.Packaging.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\EMS.Site.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\appsettings.Development.json
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\appsettings.json
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\libman.json
@@ -99,6 +99,7 @@ D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\Azure.Identity.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\Humanizer.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\MessagePack.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\MessagePack.Annotations.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\System.Web.Mvc.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\System.Web.Razor.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\System.Web.Helpers.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
@@ -159,11 +160,11 @@ D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGe
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.Common.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.Configuration.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.Frameworks.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.LibraryModel.dll
-D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.Packaging.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.ProjectModel.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.Protocol.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\NuGet.Versioning.dll
@@ -194,6 +195,7 @@ D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.resourc
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
@@ -247,7 +249,6 @@ D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CS
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Features.resources.dll
-D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
@@ -338,7 +339,6 @@ D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Wo
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
@@ -370,6 +370,7 @@ D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\scopedcss\Areas\Employee\Views\Sh
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\scopedcss\bundle\EMS.Site.styles.css
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\scopedcss\projectbundle\EMS.Site.bundle.scp.css
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\EMS.Site.csproj.CopyComplete
+D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\EMS.Site.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\refint\EMS.Site.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\EMS.Site.pdb
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\EMS.Site.genruntimeconfig.cache

@@ -75,8 +75,5 @@ namespace EMS.Repository.EF
 
         [NotMapped]
         public bool isUserExists { get; set; } = false;
-
-
-
     }
 }
