@@ -75,5 +75,10 @@ namespace EMS.Repository.EF
 
         [NotMapped]
         public bool isUserExists { get; set; } = false;
+
+        [NotMapped]
+        public int PageNumber { get; set; } = 1;
+        [NotMapped]
+        public int PageSize { get; set; } = 2;
     }
 }

@@ -1,8 +1,9 @@
 ﻿
+
 function loadPage(pageNumber) {
-    // Make AJAX call to the controller action method
+    debugger
     $.ajax({
-        url: '/Home/Employee',
+        url: '/Admin/Home/EmployeeFilter',
         type: 'GET',
         data: { PageNumber: pageNumber},
         success: function (response) {
@@ -13,3 +14,5 @@ function loadPage(pageNumber) {
         }
     });
 }
+
+

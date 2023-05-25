@@ -42,7 +42,7 @@ namespace EMS.Site.Areas.Admin.Controllers
         #region Employee management
         [HttpGet]
         [ActionName(Actions.Employee)]
-        public IActionResult Employee(int PageNumber = 1, int? PageSize = 2)
+        public IActionResult Employee(int PageNumber = 1, int PageSize = 2)
         {
             if (HttpContext.Session.GetInt32("AdmnId") != null && HttpContext.Session.GetString("AdmnPassUpdated") == "Yes")
             {
@@ -80,5 +80,41 @@ namespace EMS.Site.Areas.Admin.Controllers
             }
         }
         #endregion
+
+        [HttpGet]
+        [ActionName(Actions.EmployeeFilter)]
+        public IActionResult EmployeeFIlter(Employees employees)
+        {
+            if(employees != null)
+            {
+                SpEmployeeListsViewModel EmpLists = new();
+                using (var command = _context.Database.GetDbConnection().CreateCommand())
+                {
+                    command.CommandText = "GetEmployees";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add(new SqlParameter("@PageNumber", employees.PageNumber));
+                    command.Parameters.Add(new SqlParameter("@PageSize", employees.PageSize));
+                    command.Parameters.Add(new SqlParameter("@TotalRecords", SqlDbType.Int) { Direction = ParameterDirection.Output });
+                    command.Parameters.Add(new SqlParameter("@TotalPages", SqlDbType.Int) { Direction = ParameterDirection.Output });
+                    command.Parameters.Add(new SqlParameter("@CurrentPage", SqlDbType.Int) { Direction = ParameterDirection.Output });
+
+                    _context.Database.OpenConnection();
+                    command.ExecuteNonQuery();
+
+                    int totalRecords = (int)command.Parameters["@TotalRecords"].Value;
+                    int totalPages = (int)command.Parameters["@TotalPages"].Value;
+                    int currentPage = (int)command.Parameters["@CurrentPage"].Value;
+
+                    EmpLists.TotalRecords = totalRecords;
+                    EmpLists.TotalPages = totalPages;
+                    EmpLists.CurrentPage = currentPage;
+                }
+                List<Employees> employee =_context.Employees.FromSqlInterpolated($@"EXEC GetEmployees @PageNumber={employees.PageNumber}, @PageSize={employees.PageSize}, @TotalRecords={EmpLists.TotalRecords} out, @TotalPages={EmpLists.TotalPages} out, @CurrentPage = {EmpLists.CurrentPage} out").ToList();
+
+                EmpLists.EmpList = employee;
+                return PartialView(PartialViews._EmpListsPartial, EmpLists);
+            }
+            return RedirectToAction(Actions.Employee);
+        }
     }
 }

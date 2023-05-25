@@ -1,4 +1,13 @@
-﻿.card {
-    font-family: "Nunito", sans-serif;
-    font-size: 0.84211em;
+﻿.whitespace {
+    white-space: nowrap;
+}
+
+.fa-check {
+    color: springgreen;
+    font-size: 20px;
+}
+
+.fa-xmark {
+    color: red;
+    font-size: 20px;
 }

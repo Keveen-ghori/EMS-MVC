@@ -108,7 +108,8 @@ label {
 input:focus ~ label,
 input:valid ~ label,
 select:focus ~ label,
-select:valid ~ label{
+select:valid ~ label,
+input:-webkit-autofill ~ .labe {
     top: calc(var(--spacing-top) * var(--spacing-top-offset));
     left: calc(var(--spacing-left) * var(--spacing-left-offset));
     font-size: 15px;
@@ -157,4 +158,11 @@ select.minimal {
     width: 100%;
     margin-bottom: 10px;
     color: #555;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
 }

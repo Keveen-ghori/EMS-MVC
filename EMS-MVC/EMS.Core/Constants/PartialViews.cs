@@ -8,5 +8,7 @@ namespace EMS.Core.Constants
 {
     public static class PartialViews
     {
+        public const string _EmpListsPartial = "_EmpListsPartial";
+        public const string _EmpPagination = "_EmpPagination";
     }
 }

@@ -3,10 +3,10 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-<link href="~/admin/css/EmployeeLists.css" rel="stylesheet" />
+
 @foreach (var item in Model.EmpList)
 {
-    <tr>
+    <tr class="whitespace" style="">
         <td scope="row">@item.UserName</td>
         <td>@item.Email</td>
         <td>@item.DOB?.ToString("dd/MM/yyyy").Replace('-','/')</td>
@@ -26,7 +26,18 @@
                 }
             }
         </td>
-        <td>@item.IsLocked</td>
+        <td>
+            @{
+                if(item.IsLocked == false)
+                {
+                    <i class="fa-sharp fa-solid fa-check"></i>
+                }
+                else
+                {
+                    <i class="fa-solid fa-xmark"></i>
+                }
+            }
+        </td>
         <td>
             <a class="p-3">
                 <i class="fa-solid fa-eye text-info"></i>
