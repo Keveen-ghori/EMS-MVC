@@ -85,7 +85,7 @@ namespace EMS.Site.Areas.Admin.Controllers
         [ActionName(Actions.EmployeeFilter)]
         public IActionResult EmployeeFIlter(Employees employees)
         {
-            if(employees != null)
+            if (employees != null)
             {
                 SpEmployeeListsViewModel EmpLists = new();
                 using (var command = _context.Database.GetDbConnection().CreateCommand())
@@ -109,7 +109,7 @@ namespace EMS.Site.Areas.Admin.Controllers
                     EmpLists.TotalPages = totalPages;
                     EmpLists.CurrentPage = currentPage;
                 }
-                List<Employees> employee =_context.Employees.FromSqlInterpolated($@"EXEC GetEmployees @PageNumber={employees.PageNumber}, @PageSize={employees.PageSize}, @TotalRecords={EmpLists.TotalRecords} out, @TotalPages={EmpLists.TotalPages} out, @CurrentPage = {EmpLists.CurrentPage} out").ToList();
+                List<Employees> employee = _context.Employees.FromSqlInterpolated($@"EXEC GetEmployees @PageNumber={employees.PageNumber}, @PageSize={employees.PageSize}, @TotalRecords={EmpLists.TotalRecords} out, @TotalPages={EmpLists.TotalPages} out, @CurrentPage = {EmpLists.CurrentPage} out").ToList();
 
                 EmpLists.EmpList = employee;
                 return PartialView(PartialViews._EmpListsPartial, EmpLists);

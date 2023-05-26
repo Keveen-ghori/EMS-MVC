@@ -34,7 +34,7 @@ namespace EMS.Core.Constants
         public const string AdminDifferentPass = "New password must be different from your old password...";
         public const string AdminWrongOldPass = "Please enter correct old password...";
         public const string AdminSuccessfullyUpdatedPassword = "Password updated successfully.";
-
+        public const string AdminLogout = "Logged out successfully.";
         #endregion
     }
 }

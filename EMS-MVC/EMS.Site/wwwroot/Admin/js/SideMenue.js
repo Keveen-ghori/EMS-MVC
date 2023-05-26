@@ -25,16 +25,16 @@
     });
 
     $(document).ready(function () {
-        $(".user-profile").on("click", function (e) {
-            $(".profile-hover").toggle();
-            $(".popup-overlay").toggle();
-            e.preventDefault();
-        });
+        //$(".user-profile").on("click", function (e) {
+        //    $(".profile-hover").toggle();
+        //    $(".popup-overlay").toggle();
+        //    e.preventDefault();
+        //});
 
-        $(".popup-overlay").click(function () {
-            $(".popup-overlay").toggle();
-            $(".profile-hover").toggle();
-        });
+        //$(".popup-overlay").click(function () {
+        //    $(".popup-overlay").toggle();
+        //    $(".profile-hover").toggle();
+        //});
 
     });
 

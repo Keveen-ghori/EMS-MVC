@@ -220,8 +220,14 @@ namespace EMS.Site.Areas.Admin.Controllers
         [ActionName(Actions.Logout)]
         public IActionResult Logout()
         {
-            HttpContext.Session.Clear();
-            return RedirectToAction(Actions.Login);
+
+            if (HttpContext.Session.GetInt32("AdmnId") != null)
+            {
+                HttpContext.Session.Clear();
+                TempData[ToastrMessages.AdminLogout] = ToastrMessages.AdminLogout;
+                return RedirectToAction(Actions.Login);
+            }
+            return RedirectToAction(Actions.Index, Controllors.Home);
         }
         #endregion
     }

@@ -81,8 +81,6 @@ H:\EMS\EMS\obj\Debug\net6.0\refint\EMS.Site.dll
 H:\EMS\EMS\obj\Debug\net6.0\EMS.Site.pdb
 H:\EMS\EMS\obj\Debug\net6.0\EMS.Site.genruntimeconfig.cache
 H:\EMS\EMS\obj\Debug\net6.0\ref\EMS.Site.dll
-D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
-D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\appsettings.Development.json
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\appsettings.json
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\libman.json
@@ -249,6 +247,7 @@ D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CS
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
@@ -294,6 +293,7 @@ D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualB
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll

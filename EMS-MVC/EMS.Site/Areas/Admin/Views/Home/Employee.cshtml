@@ -14,28 +14,7 @@
 <div class="mt-4">
     <div class="card">
         <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-hover table-responsive mb-0">
-                    <thead>
-                        <tr>
-                            <th scope="row" class="th-lg">User Name</a></th>
-                            <th class="th-lg">Email</th>
-                            <th class="th-lg">Date of Birth</th>
-                            <th class="th-lg">Gender</th>
-                            <th class="th-lg">IsLocked</th>
-                            <th class="th-lg"></th>
-                        </tr>
-                    </thead>
-                    <tbody id="EmpListsTable">
-                        <partial name="@PartialViews._EmpListsPartial" model="Model" />
-                    </tbody>
-                </table>
-            </div>
-            <div class="d-flex justify-content-center">
-                <nav class="my-4 pt-2">
-                    <partial name="@PartialViews._EmpPagination" model="Model" />
-                </nav>
-            </div>
+            <partial name="@PartialViews._EmpListsPartial" model="Model" />
         </div>
     </div>
 

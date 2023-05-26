@@ -65,6 +65,17 @@
         TempData.Remove(ToastrMessages.AdmnRegisterSuccess);
     }
 
+    @if (TempData.ContainsKey(ToastrMessages.AdminLogout))
+    {
+        <script>
+            toastr.options = {
+                positionClass: 'toast-top-left'
+            };
+            toastr.success('@ToastrMessages.AdminLogout');
+        </script>
+        TempData.Remove(ToastrMessages.AdminLogout);
+    }
+
     @if (TempData.ContainsKey(ToastrMessages.AdminNotMach))
     {
         <script>

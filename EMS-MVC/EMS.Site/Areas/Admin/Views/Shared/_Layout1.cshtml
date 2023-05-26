@@ -27,12 +27,26 @@
                 </span>
                 <div class="fa-solid fa-bars-staggered" id="menu_bar"></div>
 
-                <div class="user-profile me-4">
+                <div class="user-profile me-4" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <span>@username<br>Admin</span>
                     <div class="mini-user">
                         <img src="/Admin/Images/tom-hanks.png">
                     </div>
                 </div>
+                <ul class="dropdown-menu custom_dropdown" aria-labelledby="navbarDropdown">
+                    <li>
+                         <div class="user-profile-icon">
+                            <img src="~/Admin/Images/tom-hanks.png" alt="Profile">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="Account-Profile">
+                            <span class="">@username</span><br>
+                            <span class="">Admin</span>
+                            <a class="text-decoration-none logout" asp-area="@Area.Admin" asp-controller="@Controllors.Account" asp-action="@Actions.Logout"><h1>LogOut</h1></a>
+                        </div>
+                    </li>
+                </ul>
             </header>
             <div class="leftMenu">
                 <ul class="leftMenuList">
@@ -74,16 +88,16 @@
                     @RenderBody()
                 </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
-            <div class="profile-hover">
-                <div class="user-profile-icon">
-                    <img src="~/Admin/Images/tom-hanks.png">
-                </div>
-                <div class="user-profile">
-                    <span class="">@username</span><br>
-                    <span class="">Admin</span>
-                    <a class="text-decoration-none" asp-controller="@Controllors.Account" asp-action="@Actions.Logout"><h1>LogOut</h1></a>
-                </div>
+            @*<div class="profile-hover">
+            <div class="user-profile-icon">
+            <img src="~/Admin/Images/tom-hanks.png">
             </div>
+            <div class="user-profile">
+            <span class="">@username</span><br>
+            <span class="">Admin</span>
+            <a class="text-decoration-none" asp-area="@Area.Admin" asp-controller="@Controllors.Account" asp-action="@Actions.Logout"><h1>LogOut</h1></a>
+            </div>
+            </div>*@
         </div>
         <div class="popup-overlay"></div>
     </div>
