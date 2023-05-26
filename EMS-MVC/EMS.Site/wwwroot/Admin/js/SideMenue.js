@@ -24,20 +24,6 @@
         $(".tooltip_nav p").toggleClass("hide");
     });
 
-    $(document).ready(function () {
-        //$(".user-profile").on("click", function (e) {
-        //    $(".profile-hover").toggle();
-        //    $(".popup-overlay").toggle();
-        //    e.preventDefault();
-        //});
-
-        //$(".popup-overlay").click(function () {
-        //    $(".popup-overlay").toggle();
-        //    $(".profile-hover").toggle();
-        //});
-
-    });
-
 });
 $(document).ready(function () {
     let path = window.location.pathname;

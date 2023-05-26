@@ -5,76 +5,89 @@
 *@
 
 <div class="table-responsive" id="EmpListsTable">
-    <table class="table table-hover table-responsive mb-0">
-        <thead>
-            <tr>
-                <th scope="row" class="th-lg">User Name</th>
-                <th class="th-lg">Email</th>
-                <th class="th-lg">Date of Birth</th>
-                <th class="th-lg">Gender</th>
-                <th class="th-lg">IsLocked</th>
-                <th class="th-lg"></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.EmpList)
-            {
-                <tr class="whitespace" style="">
-                    <td scope="row">@item.UserName</td>
-                    <td>@item.Email</td>
-                    <td>@item.DOB?.ToString("dd/MM/yyyy").Replace('-','/')</td>
-                    <td>
-                        @{
-                            if (@item.Gender == 1)
-                            {
-                                <text>Male</text>
-                            }
-                            else if (@item.Gender == 2)
-                            {
-                                <text>Frmale</text>
-                            }
-                            else
-                            {
-                                <text>Unisex</text>
-                            }
-                        }
-                    </td>
-                    <td>
-                        @{
-                            if (item.IsLocked == false)
-                            {
-                                <i class="fa-sharp fa-solid fa-check"></i>
-                            }
-                            else
-                            {
-                                <i class="fa-solid fa-xmark"></i>
-                            }
-                        }
-                    </td>
-                    <td>
-                        <a class="p-3">
-                            <i class="fa-solid fa-eye text-info"></i>
-                        </a>
-                        <a class="p-3">
-                            @{
-                                if (item.IsLocked == true)
-                                {
-                                    <i class="fa-solid fa-lock text-danger"></i>
-                                }
-                                else
-                                {
-                                    <i class="fa-solid fa-unlock-keyhole text-success"></i>
-                                }
-                            }
-                        </a>
-                        <a class="p-3 text-danger" data-bs-toggle="modal" data-bs-target="#"><i class="fa-sharp fa-solid fa-trash"></i></a>
-                    </td>
+    <div class="table-responsive">
+        <table class="table table-hover table-responsive mb-0">
+            <thead>
+                <tr>
+                    <th scope="row" class="th-lg">User Name</th>
+                    <th class="th-lg">Email</th>
+                    <th class="th-lg">Date of Birth</th>
+                    <th class="th-lg">Gender</th>
+                    <th class="th-lg">IsLocked</th>
+                    <th class="th-lg"></th>
                 </tr>
+            </thead>
+            <tbody>
+                @{
+                    if (Model.EmpList.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="6" style="font-size: x-large">No records found!😢</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model.EmpList)
+                        {
+                            <tr class="whitespace" style="">
+                                <td scope="row">@item.UserName</td>
+                                <td>@item.Email</td>
+                                <td>@item.DOB?.ToString("dd/MM/yyyy").Replace('-','/')</td>
+                                <td>
+                                    @{
+                                        if (@item.Gender == 1)
+                                        {
+                                            <text>Male</text>
+                                        }
+                                        else if (@item.Gender == 2)
+                                        {
+                                            <text>Female</text>
+                                        }
+                                        else
+                                        {
+                                            <text>Unisex</text>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    @{
+                                        if (item.IsLocked == false)
+                                        {
+                                            <i class="fa-sharp fa-solid fa-check"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fa-solid fa-xmark"></i>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    <a class="p-3">
+                                        <i class="fa-solid fa-eye text-info"></i>
+                                    </a>
+                                    <a class="p-3">
+                                        @{
+                                            if (item.IsLocked == true)
+                                            {
+                                                <i class="fa-solid fa-lock text-danger"></i>
+                                            }
+                                            else
+                                            {
+                                                <i class="fa-solid fa-unlock-keyhole text-success"></i>
+                                            }
+                                        }
+                                    </a>
+                                    <a class="p-3 text-danger" data-bs-toggle="modal" data-bs-target="#"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
 
-            }
+                        }
 
-        </tbody>
-    </table>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
     <div class="d-flex justify-content-center">
         <nav class="my-4 pt-2">
             <partial name="@PartialViews._EmpPagination" model="Model" />

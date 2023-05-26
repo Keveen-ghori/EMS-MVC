@@ -16,9 +16,12 @@ namespace EMS.Site.Areas.Admin.Controllers
     public class HomeController : Controller
     {
         private readonly EmployeeManagementContext _context;
-        public HomeController(EmployeeManagementContext context)
+        private ILogger<HomeController> _logger;
+
+        public HomeController(EmployeeManagementContext context, ILogger<HomeController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         #region Index
@@ -60,9 +63,9 @@ namespace EMS.Site.Areas.Admin.Controllers
                     _context.Database.OpenConnection();
                     command.ExecuteNonQuery();
 
-                    int totalRecords = (int)command.Parameters["@TotalRecords"].Value;
-                    int totalPages = (int)command.Parameters["@TotalPages"].Value;
-                    int currentPage = (int)command.Parameters["@CurrentPage"].Value;
+                    int totalRecords = (int)(command.Parameters["@TotalRecords"].Value ?? 0);
+                    int totalPages = (int)(command.Parameters["@TotalPages"].Value ?? 0);
+                    int currentPage = (int)(command.Parameters["@CurrentPage"].Value ?? 0);
 
                     EmpLists.TotalRecords = totalRecords;
                     EmpLists.TotalPages = totalPages;
@@ -81,40 +84,56 @@ namespace EMS.Site.Areas.Admin.Controllers
         }
         #endregion
 
+        #region Employee Filters
         [HttpGet]
         [ActionName(Actions.EmployeeFilter)]
         public IActionResult EmployeeFIlter(Employees employees)
         {
-            if (employees != null)
+            try
             {
-                SpEmployeeListsViewModel EmpLists = new();
-                using (var command = _context.Database.GetDbConnection().CreateCommand())
+                if (employees != null)
                 {
-                    command.CommandText = "GetEmployees";
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add(new SqlParameter("@PageNumber", employees.PageNumber));
-                    command.Parameters.Add(new SqlParameter("@PageSize", employees.PageSize));
-                    command.Parameters.Add(new SqlParameter("@TotalRecords", SqlDbType.Int) { Direction = ParameterDirection.Output });
-                    command.Parameters.Add(new SqlParameter("@TotalPages", SqlDbType.Int) { Direction = ParameterDirection.Output });
-                    command.Parameters.Add(new SqlParameter("@CurrentPage", SqlDbType.Int) { Direction = ParameterDirection.Output });
+                    SpEmployeeListsViewModel EmpLists = new();
+                    using (var command = _context.Database.GetDbConnection().CreateCommand())
+                    {
+                        command.CommandText = "GetEmployees";
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.Add(new SqlParameter("@PageNumber", employees.PageNumber));
+                        command.Parameters.Add(new SqlParameter("@PageSize", employees.PageSize));
+                        command.Parameters.Add(new SqlParameter("@TotalRecords", SqlDbType.Int) { Direction = ParameterDirection.Output });
+                        command.Parameters.Add(new SqlParameter("@TotalPages", SqlDbType.Int) { Direction = ParameterDirection.Output });
+                        command.Parameters.Add(new SqlParameter("@CurrentPage", SqlDbType.Int) { Direction = ParameterDirection.Output });
+                        command.Parameters.Add(new SqlParameter("@Username", employees.UserName));
+                        command.Parameters.Add(new SqlParameter("@Email", employees.Email));
+                        command.Parameters.Add(new SqlParameter("@Gender", employees.Gender));
+                        command.Parameters.Add(new SqlParameter("@DOB", employees.DOB));
+                        command.Parameters.Add(new SqlParameter("@IsLocked", employees.IsLocked));
 
-                    _context.Database.OpenConnection();
-                    command.ExecuteNonQuery();
+                        _context.Database.OpenConnection();
+                        command.ExecuteNonQuery();
 
-                    int totalRecords = (int)command.Parameters["@TotalRecords"].Value;
-                    int totalPages = (int)command.Parameters["@TotalPages"].Value;
-                    int currentPage = (int)command.Parameters["@CurrentPage"].Value;
+                        int totalRecords = (int)(command.Parameters["@TotalRecords"].Value ?? 0);
+                        int totalPages = (int)(command.Parameters["@TotalPages"].Value ?? 0);
+                        int currentPage = (int)(command.Parameters["@CurrentPage"].Value ?? 0);
 
-                    EmpLists.TotalRecords = totalRecords;
-                    EmpLists.TotalPages = totalPages;
-                    EmpLists.CurrentPage = currentPage;
+                        EmpLists.TotalRecords = totalRecords;
+                        EmpLists.TotalPages = totalPages;
+                        EmpLists.CurrentPage = currentPage;
+                    }
+                    List<Employees> employee = _context.Employees.FromSqlInterpolated($@"EXEC GetEmployees @PageNumber={employees.PageNumber}, @PageSize={employees.PageSize},@Username={employees.UserName}, @Email={employees.Email}, @Gender={employees.Gender}, @DOB={employees.DOB}, @IsLocked={employees.IsLocked}, @TotalRecords={EmpLists.TotalRecords} out, @TotalPages={EmpLists.TotalPages} out, @CurrentPage = {EmpLists.CurrentPage} out").ToList();
+
+                    EmpLists.EmpList = employee;
+                    return PartialView(PartialViews._EmpListsPartial, EmpLists);
                 }
-                List<Employees> employee = _context.Employees.FromSqlInterpolated($@"EXEC GetEmployees @PageNumber={employees.PageNumber}, @PageSize={employees.PageSize}, @TotalRecords={EmpLists.TotalRecords} out, @TotalPages={EmpLists.TotalPages} out, @CurrentPage = {EmpLists.CurrentPage} out").ToList();
-
-                EmpLists.EmpList = employee;
-                return PartialView(PartialViews._EmpListsPartial, EmpLists);
+                return RedirectToAction(Actions.Employee);
             }
-            return RedirectToAction(Actions.Employee);
+            catch(Exception ex)
+            {
+                _logger.LogError($"Something went wrong: {ex}");
+                return StatusCode(500, "Internal server error");
+            }
+
         }
+        #endregion
     }
 }
