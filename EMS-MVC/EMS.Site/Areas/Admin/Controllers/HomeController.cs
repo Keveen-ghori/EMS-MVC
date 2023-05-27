@@ -45,7 +45,7 @@ namespace EMS.Site.Areas.Admin.Controllers
         #region Employee management
         [HttpGet]
         [ActionName(Actions.Employee)]
-        public IActionResult Employee(int PageNumber = 1, int PageSize = 2)
+        public IActionResult Employee(int PageNumber = 1, int PageSize = 5)
         {
             if (HttpContext.Session.GetInt32("AdmnId") != null && HttpContext.Session.GetString("AdmnPassUpdated") == "Yes")
             {

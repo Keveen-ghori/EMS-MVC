@@ -36,6 +36,7 @@ namespace EMS.Repository.EF
 
         [Display(Name = Resourses.DOB)]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MMM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DOB { get; set; }
 
         [Display(Name = Resourses.Gender)]
@@ -79,6 +80,6 @@ namespace EMS.Repository.EF
         [NotMapped]
         public int PageNumber { get; set; } = 1;
         [NotMapped]
-        public int PageSize { get; set; } = 2;
+        public int PageSize { get; set; } = 5;
     }
 }

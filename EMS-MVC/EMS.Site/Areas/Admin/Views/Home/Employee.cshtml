@@ -11,32 +11,32 @@
 <link href="~/lib/mdbbootstrap/css/mdb.min.css" rel="stylesheet" />
 <h2>Employee</h2>
 
-<div class="mt-4">
+<div class="mt-3">
     <div class="card">
         <div class="card-body">
             <!-- For demo purpose -->
             <div class="">
                 <div class="mx-auto">
-                    <div class="bg-white p-3 rounded">
+                    <div class="bg-white pt-3 rounded">
                         <div class="row">
                             <div class="col">
                                 <div class="input-group">
-                                    <input type="search" name="Username" id="Username" placeholder="Search by Username..." class="form-control bg-none rounded rounded-pill shadow-sm mb-4 p-2 ps-3">
+                                    <input type="search" id="Username" placeholder="Search by Username..." class="form-control bg-none rounded rounded-pill shadow-sm mb-4 p-2 ps-3">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="input-group">
-                                    <input type="search" name="Email" id="Email" placeholder="Search by Email..." class="form-control bg-none rounded rounded-pill shadow-sm mb-4 p-2 ps-3">
+                                    <input type="search" id="Email" placeholder="Search by Email..." class="form-control bg-none rounded rounded-pill shadow-sm mb-4 p-2 ps-3">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="input-group">
-                                    <input type="date" name="DOB" id="DOB" placeholder="Search by Date of birth..." class="form-control bg-none rounded rounded-pill shadow-sm mb-4 p-2 ps-3">
+                                    <input type="date" id="DOB" placeholder="Search by Date of birth..." class="form-control bg-none rounded rounded-pill shadow-sm mb-4 p-2 ps-3">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="input-group">
-                                    <select name="Gender" id="Gender" class="form-control bg-none rounded rounded-pill shadow-sm mb-4 p-2 ps-3" title="Select gender">
+                                    <select id="Gender" class="form-control bg-none rounded rounded-pill shadow-sm mb-4 p-2 ps-3" title="Select gender">
                                         <option value="">Gender</option>
                                         <option value="1">Male</option>
                                         <option value="2">Female</option>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="col">
                                 <div class="input-group">
-                                    <select name="Status" id="Status" class="form-control bg-none rounded rounded-pill shadow-sm mb-4 p-2 ps-3" title="Select gender">
+                                    <select id="Status" class="form-control bg-none rounded rounded-pill shadow-sm mb-4 p-2 ps-3" title="Select gender">
                                         <option value="">Status</option>
                                         <option value="True">Lock</option>
                                         <option value="False">Unlock</option>
@@ -57,7 +57,8 @@
                       
                         <div class="">
                             <div class="input-group d-flex justify-content-end">
-                                <Button type="submit" class="rounded rounded-pill shadow-sm search-btn" id="Search">Search</Button>
+                                <Button type="submit" class="rounded rounded-pill shadow-sm search-btn me-4" id="Search">Search</Button>
+                                <Button type="button" class="rounded rounded-pill shadow-sm clear-btn" id="Clear">Clear</Button>
                             </div>
                         </div>
                     </div>

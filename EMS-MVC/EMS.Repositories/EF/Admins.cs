@@ -36,6 +36,7 @@ namespace EMS.Repositories.EF
 
         [Display(Name = Resourses.DOB)]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime? DOB { get; set; }
 
         [Display(Name = Resourses.Gender)]

@@ -1,6 +1,4 @@
-﻿
-
-function loadPage(pageNumber) {
+﻿function loadPage(pageNumber) {
     let UserName = $('#Username').val();
     let Email = $('#Email').val();
     let DOB = $('#DOB').val();
@@ -43,7 +41,6 @@ $('#Search').on('click', function () {
         Gender: Gender,
         IsLocked: IsLocked
     };
-
     $.ajax({
         url: '/Admin/Home/EmployeeFilter',
         type: 'GET',
@@ -56,3 +53,11 @@ $('#Search').on('click', function () {
         }
     });
 })
+
+$("#Clear").on('click', function () {
+    $('#Username').val('');
+    $('#Email').val('');
+    $('#DOB').val('');
+    $('#Gender').val('');
+    $('#Status').val('');
+});

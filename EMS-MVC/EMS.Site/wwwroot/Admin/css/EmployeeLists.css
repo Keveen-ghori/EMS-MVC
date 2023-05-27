@@ -41,3 +41,13 @@ tr td {
     font-weight: 600;
     border: none;
 }
+
+.clear-btn {
+    width: 100px;
+    height: 40px;
+    color: #ffff;
+    background-color: #e74c3c;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+}

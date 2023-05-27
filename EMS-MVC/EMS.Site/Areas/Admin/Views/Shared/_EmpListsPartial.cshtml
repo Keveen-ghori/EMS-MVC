@@ -4,9 +4,9 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-<div class="table-responsive" id="EmpListsTable">
+<div class="" id="EmpListsTable">
     <div class="table-responsive">
-        <table class="table table-hover table-responsive mb-0">
+        <table class="table table-hover mb-0">
             <thead>
                 <tr>
                     <th scope="row" class="th-lg">User Name</th>
@@ -21,8 +21,8 @@
                 @{
                     if (Model.EmpList.Count == 0)
                     {
-                        <tr>
-                            <td colspan="6" style="font-size: x-large">No records found!😢</td>
+                        <tr class="text-lg-center">
+                            <td colspan="6" style="font-weight: 700;" class="text-danger">No records found! 😢</td>
                         </tr>
                     }
                     else
@@ -53,11 +53,12 @@
                                     @{
                                         if (item.IsLocked == false)
                                         {
-                                            <i class="fa-sharp fa-solid fa-check"></i>
+                                            <i class="fa-solid fa-xmark"></i>
                                         }
                                         else
                                         {
-                                            <i class="fa-solid fa-xmark"></i>
+                                            <i class="fa-sharp fa-solid fa-check"></i>
+
                                         }
                                     }
                                 </td>
