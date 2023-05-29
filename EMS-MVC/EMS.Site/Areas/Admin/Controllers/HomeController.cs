@@ -107,7 +107,7 @@ namespace EMS.Site.Areas.Admin.Controllers
                         command.Parameters.Add(new SqlParameter("@Email", employees.Email));
                         command.Parameters.Add(new SqlParameter("@Gender", employees.Gender));
                         command.Parameters.Add(new SqlParameter("@DOB", employees.DOB));
-                        command.Parameters.Add(new SqlParameter("@IsLocked", employees.IsLocked));
+                        command.Parameters.Add(new SqlParameter("@IsLocked", employees.Lock));
 
                         _context.Database.OpenConnection();
                         command.ExecuteNonQuery();
@@ -120,19 +120,141 @@ namespace EMS.Site.Areas.Admin.Controllers
                         EmpLists.TotalPages = totalPages;
                         EmpLists.CurrentPage = currentPage;
                     }
-                    List<Employees> employee = _context.Employees.FromSqlInterpolated($@"EXEC GetEmployees @PageNumber={employees.PageNumber}, @PageSize={employees.PageSize},@Username={employees.UserName}, @Email={employees.Email}, @Gender={employees.Gender}, @DOB={employees.DOB}, @IsLocked={employees.IsLocked}, @TotalRecords={EmpLists.TotalRecords} out, @TotalPages={EmpLists.TotalPages} out, @CurrentPage = {EmpLists.CurrentPage} out").ToList();
+                    List<Employees> employee = _context.Employees.FromSqlInterpolated($@"EXEC GetEmployees @PageNumber={employees.PageNumber}, @PageSize={employees.PageSize},@Username={employees.UserName}, @Email={employees.Email}, @Gender={employees.Gender}, @DOB={employees.DOB}, @IsLocked={employees.Lock}, @TotalRecords={EmpLists.TotalRecords} out, @TotalPages={EmpLists.TotalPages} out, @CurrentPage = {EmpLists.CurrentPage} out").ToList();
 
                     EmpLists.EmpList = employee;
                     return PartialView(PartialViews._EmpListsPartial, EmpLists);
                 }
                 return RedirectToAction(Actions.Employee);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong: {ex}");
                 return StatusCode(500, "Internal server error");
             }
 
+        }
+        #endregion
+
+        #region Delete Employee
+        [HttpPost]
+        [ActionName(Actions.DeleteEmp)]
+        public IActionResult DeleteEmp(long EmployeeId, int PageNumber = 1, int PageSize = 5)
+        {
+            var IsEmpExists = _context.Employees.FirstOrDefault(Emp => Emp.EmployeeId == EmployeeId);
+
+            if (IsEmpExists == null)
+            {
+                return NotFound();
+            }
+            IsEmpExists.Deleted_At = DateTime.Now;
+            _context.SaveChanges();
+            SpEmployeeListsViewModel EmpLists = new();
+            using (var command = _context.Database.GetDbConnection().CreateCommand())
+            {
+                command.CommandText = "GetEmployees";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@PageNumber", PageNumber));
+                command.Parameters.Add(new SqlParameter("@PageSize", PageSize));
+                command.Parameters.Add(new SqlParameter("@TotalRecords", SqlDbType.Int) { Direction = ParameterDirection.Output });
+                command.Parameters.Add(new SqlParameter("@TotalPages", SqlDbType.Int) { Direction = ParameterDirection.Output });
+                command.Parameters.Add(new SqlParameter("@CurrentPage", SqlDbType.Int) { Direction = ParameterDirection.Output });
+
+                _context.Database.OpenConnection();
+                command.ExecuteNonQuery();
+
+                int totalRecords = (int)(command.Parameters["@TotalRecords"].Value ?? 0);
+                int totalPages = (int)(command.Parameters["@TotalPages"].Value ?? 0);
+                int currentPage = (int)(command.Parameters["@CurrentPage"].Value ?? 0);
+
+                EmpLists.TotalRecords = totalRecords;
+                EmpLists.TotalPages = totalPages;
+                EmpLists.CurrentPage = currentPage;
+            }
+            List<Employees> employee = _context.Employees.FromSqlInterpolated($@"EXEC GetEmployees @PageNumber={PageNumber}, @PageSize={PageSize}, @TotalRecords={EmpLists.TotalRecords} out, @TotalPages={EmpLists.TotalPages} out, @CurrentPage = {EmpLists.CurrentPage} out").ToList();
+
+            EmpLists.EmpList = employee;
+            return PartialView(PartialViews._EmpListsPartial, EmpLists);
+        }
+        #endregion
+
+        #region Lock/Unlock 
+        [ActionName(Actions.LockEmp)]
+        [HttpPost]
+        public IActionResult LockEmp(long EmployeeId, bool status, int PageNumber, int PageSize = 5)
+        {
+            var IsEmpExists = _context.Employees.Find(EmployeeId);
+            if (IsEmpExists == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                IsEmpExists.IsLocked = status;
+                IsEmpExists.Updated_At = DateTime.Now;
+                _context.SaveChanges();
+                SpEmployeeListsViewModel EmpLists = new();
+                using (var command = _context.Database.GetDbConnection().CreateCommand())
+                {
+                    command.CommandText = "GetEmployees";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add(new SqlParameter("@PageNumber", PageNumber));
+                    command.Parameters.Add(new SqlParameter("@PageSize", PageSize));
+                    command.Parameters.Add(new SqlParameter("@TotalRecords", SqlDbType.Int) { Direction = ParameterDirection.Output });
+                    command.Parameters.Add(new SqlParameter("@TotalPages", SqlDbType.Int) { Direction = ParameterDirection.Output });
+                    command.Parameters.Add(new SqlParameter("@CurrentPage", SqlDbType.Int) { Direction = ParameterDirection.Output });
+
+                    _context.Database.OpenConnection();
+                    command.ExecuteNonQuery();
+
+                    int totalRecords = (int)(command.Parameters["@TotalRecords"].Value ?? 0);
+                    int totalPages = (int)(command.Parameters["@TotalPages"].Value ?? 0);
+                    int currentPage = (int)(command.Parameters["@CurrentPage"].Value ?? 0);
+
+                    EmpLists.TotalRecords = totalRecords;
+                    EmpLists.TotalPages = totalPages;
+                    EmpLists.CurrentPage = currentPage;
+                }
+                List<Employees> employee = _context.Employees.FromSqlInterpolated($@"EXEC GetEmployees @PageNumber={PageNumber}, @PageSize={PageSize}, @TotalRecords={EmpLists.TotalRecords} out, @TotalPages={EmpLists.TotalPages} out, @CurrentPage = {EmpLists.CurrentPage} out").ToList();
+
+                EmpLists.EmpList = employee;
+                return PartialView(PartialViews._EmpListsPartial, EmpLists);
+            }
+        }
+        #endregion
+
+        #region Employee Configuration
+        [HttpGet]
+        [ActionName(Actions.Configuration)]
+        public IActionResult Configuration()
+        {
+            if (HttpContext.Session.GetInt32("AdmnId") != null && HttpContext.Session.GetString("AdmnPassUpdated") == "Yes")
+            {
+                var emp = _context.Employees.FirstOrDefault();
+                Employees employee = new();
+                employee.Total_Attemps = emp.Total_Attemps ?? 0;
+                employee.Exp_Days = emp.Exp_Days;
+                return View(employee);
+            }
+            else
+            {
+                return RedirectToAction(Actions.Login, Controllors.Account);
+            }
+        }
+
+        [HttpPost]
+        [ActionName(Actions.Configuration)]
+        public IActionResult Configuration(int Total_attemps, int Exp_days)
+        {
+            var emp = _context.Employees.ToList();
+            foreach (var item in emp)
+            {
+                item.Total_Attemps = Total_attemps;
+                item.Exp_Days = Exp_days;
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction(Actions.Configuration);
         }
         #endregion
     }

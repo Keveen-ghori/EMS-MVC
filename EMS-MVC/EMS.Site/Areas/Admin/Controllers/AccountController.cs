@@ -172,7 +172,7 @@ namespace EMS.Site.Areas.Admin.Controllers
             }
             else
             {
-                return View(Actions.Login);
+                return RedirectToAction(Actions.Login);
             }
         }
 

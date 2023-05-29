@@ -42,6 +42,9 @@ namespace EMS.Core.Constants
 
         #region Admin Dashboard
         public const string AdminDash = "Admin Dashboard";
+        public const string Configue = "Admin Configuration";
+        public const string ExpDays = "Password Expiry Days";
+        public const string Total_Attempts = "Total Attempts";
         #endregion
 
         #region Employee Home

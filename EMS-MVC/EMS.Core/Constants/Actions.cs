@@ -15,5 +15,8 @@ namespace EMS.Core.Constants
         public const string Employee = "Employee";
         public const string Logout = "Logout";
         public const string EmployeeFilter = "EmployeeFilter";
+        public const string DeleteEmp = "DeleteEmp";
+        public const string LockEmp = "LockEmp";
+        public const string Configuration = "Configuration";
     }
 }

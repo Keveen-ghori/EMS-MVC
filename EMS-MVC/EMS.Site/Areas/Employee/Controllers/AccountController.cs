@@ -186,7 +186,7 @@ namespace EMS.Site.Areas.Employee.Controllers
             }
             else
             {
-                return View(Actions.Login);
+                return RedirectToAction(Actions.Login);
             }
         }
 

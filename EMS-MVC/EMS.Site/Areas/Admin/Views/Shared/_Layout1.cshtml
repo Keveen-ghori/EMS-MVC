@@ -42,7 +42,8 @@
                     <li>
                         <div class="Account-Profile">
                             <span class="">@username</span><br>
-                            <span class="">Admin</span>
+                            <span class="">Admin</span><br />
+                            <a class="text-decoration-none" asp-area="@Area.Admin" asp-controller="@Controllors.Account" asp-action="@Actions.UpdatePass"> <span class="">Update Password</span></a>
                             <a class="text-decoration-none logout" asp-area="@Area.Admin" asp-controller="@Controllors.Account" asp-action="@Actions.Logout"><h1>LogOut</h1></a>
                         </div>
                     </li>
@@ -65,10 +66,10 @@
                         </a>
                     </li>
                     <li class="tooltip_nav point03">
-                        <a href="#">
-                            <i class="fa fa-building" aria-hidden="true"></i>
-                            <span>Companies</span>
-                            <p>Companies</p>
+                        <a asp-action="@Actions.Configuration" asp-controller="@Controllors.Home">
+                            <i class="fa fa-gear" aria-hidden="true"></i>
+                            <span>Settings</span>
+                            <p>Settings</p>
                         </a>
                     </li>
                     <li class="tooltip_nav point04">

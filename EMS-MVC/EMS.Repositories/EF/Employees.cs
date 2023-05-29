@@ -54,6 +54,8 @@ namespace EMS.Repository.EF
         public DateTime? Deleted_At { get; set; }
         public DateTime? Updated_At { get; set; }
         public int? Attemps { get; set; } = 0;
+
+        [Display(Name =Resourses.Total_Attemps)]
         public int? Total_Attemps { get; set; } = 3;
         public bool Status { get; set; } = true;
         public bool IsLocked { get; set; } = false;
@@ -67,6 +69,7 @@ namespace EMS.Repository.EF
         [Display(Name = Resourses.Password)]
         public string? LoginPassword { get; set; } = nameof(Password);
 
+        [Display(Name = Resourses.ExpDays)]
         public int Exp_Days { get; set; } = 7;
 
         public DateTime Password_Updated_At { get; set; } = DateTime.Now;
@@ -81,5 +84,7 @@ namespace EMS.Repository.EF
         public int PageNumber { get; set; } = 1;
         [NotMapped]
         public int PageSize { get; set; } = 5;
+        [NotMapped]
+        public bool? Lock { get; set; } = null;
     }
 }

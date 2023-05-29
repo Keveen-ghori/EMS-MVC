@@ -14,7 +14,7 @@ namespace EMS.Core.Constants
         public const string EmailRequired = "Email Address is Required.";
         public const string EmailValidation = "Please enter valid email address.";
         public const string PasswordRequired = "Please enter your passowrd.";
-        public const string PasswordValidation = "Please Provide Valid Password";
+        public const string PasswordValidation = "Please Provide Valid Password!";
         public const string ConfirmPasswordRequired = "Please enter your confirm passowrd.";
         public const string ConfirmPasswordValidation = "Password does not match.";
         public const string DOB = "Please provide your date of birth.";
