@@ -76,6 +76,7 @@ function DeleteEmp(EmployeeId, currentPage) {
         type: 'POST',
         data: { EmployeeId: EmployeeId, PageNumber: currentPage },
         success: function (response) {
+            $('#EmpListsTable').html(response);
             $(DeleteEmpId).modal('hide');
             $('.modal-backdrop').remove();
 /*            $('#' + EmployeeId).remove();*/

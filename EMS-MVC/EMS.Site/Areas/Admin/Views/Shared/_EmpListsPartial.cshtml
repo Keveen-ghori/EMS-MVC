@@ -82,7 +82,7 @@
                                             }
                                         }
                                     </a>
-                                    <a class="p-3 text-danger" role="button" data-bs-toggle="modal" data-bs-target="#delete-@item.EmployeeId"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                                    <a class="p-3 text-danger" role="button" data-bs-toggle="modal" data-bs-target="#Delete-@item.EmployeeId"><i class="fa-sharp fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
 
@@ -104,7 +104,7 @@
 @*Delete Modal*@
 @foreach (var item in Model.EmpList)
 {
-    <div class="modal fade" id="delete-@item.EmployeeId" tabindex="-1" role="dialog" aria-labelledby="#Delete(@item.EmployeeId)" aria-hidden="true">
+    <div class="modal fade" id="Delete-@item.EmployeeId" tabindex="-1" role="dialog" aria-labelledby="#Delete(@item.EmployeeId)" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header border-0">

@@ -1,4 +1,8 @@
 ﻿@using EMS.Core.Constants;
+@{
+    var httpContext = Context.Request.HttpContext;
+    var username = httpContext.Session.GetString("Uname");
+}
 <!DOCTYPE html>
 
 <html>
@@ -8,16 +12,98 @@
     <title>@ViewBag.Title - Employee</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 
     <link href="~/toastr.js/toastr.min.css" rel="stylesheet" />
+     <link href="~/admin/css/Sidemenue.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="skin-blue-black">
+        <div class="wrapper">
+            <header class="main-header col-lg-12">
+                <span class="logo-mid">
+                    <img src="/Admin/Images/profile-80.png" />EMS
+                </span>
+                <div class="fa-solid fa-bars-staggered" id="menu_bar"></div>
+
+                <div class="user-profile me-4" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span>@username<br>Admin</span>
+                    <div class="mini-user">
+                        <img src="/Admin/Images/tom-hanks.png">
+                    </div>
+                </div>
+                <ul class="dropdown-menu custom_dropdown" aria-labelledby="navbarDropdown">
+                    <li>
+                        <div class="user-profile-icon">
+                            <img src="~/Admin/Images/tom-hanks.png" alt="Profile">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="Account-Profile">
+                            <span class="">@username</span><br>
+                            <span class="">Admin</span><br />
+                            <a class="text-decoration-none" asp-area="@Area.Admin" asp-controller="@Controllors.Account" asp-action="@Actions.UpdatePass"> <span class="">Update Password</span></a>
+                            <a class="text-decoration-none logout" asp-area="@Area.Admin" asp-controller="@Controllors.Account" asp-action="@Actions.Logout"><h1>LogOut</h1></a>
+                        </div>
+                    </li>
+                </ul>
+            </header>
+            <div class="leftMenu">
+                <ul class="leftMenuList">
+                    <li class="active tooltip_nav point01">
+                        <a asp-action="@Actions.Index" asp-controller="@Controllors.Home">
+                            <i class="fa fa-dashboard" aria-hidden="true"></i>
+                            <span>Dashboard</span>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="tooltip_nav point02">
+                        <a asp-action="@Actions.Employee" asp-controller="@Controllors.Home">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            <span>Employee</span>
+                            <p>Employee</p>
+                        </a>
+                    </li>
+                    <li class="tooltip_nav point03">
+                        <a asp-action="@Actions.Configuration" asp-controller="@Controllors.Home">
+                            <i class="fa fa-gear" aria-hidden="true"></i>
+                            <span>Settings</span>
+                            <p>Settings</p>
+                        </a>
+                    </li>
+                    <li class="tooltip_nav point04">
+                        <a href="#">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+                            <span>Documents</span>
+                            <p>Documents</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <!-- Main content -->
+                <section class="content">
+                    @RenderBody()
+                </section><!-- /.content -->
+            </div><!-- /.content-wrapper -->
+            @*<div class="profile-hover">
+            <div class="user-profile-icon">
+            <img src="~/Admin/Images/tom-hanks.png">
+            </div>
+            <div class="user-profile">
+            <span class="">@username</span><br>
+            <span class="">Admin</span>
+            <a class="text-decoration-none" asp-area="@Area.Admin" asp-controller="@Controllors.Account" asp-action="@Actions.Logout"><h1>LogOut</h1></a>
+            </div>
+            </div>*@
+        </div>
+        <div class="popup-overlay"></div>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/Admin/js/BootstrapValidation.js"></script>
     <script src="~/toastr.js/toastr.min.js"></script>
+    <script src="~/admin/js/SideMenue.js"></script>
     @if (TempData.ContainsKey(ToastrMessages.EmpLoginSuccess))
     {
         <script>
