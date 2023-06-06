@@ -348,9 +348,7 @@ D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Dr
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\EMS.Core.dll
-D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\EMS.Repositories.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\EMS.Core.pdb
-D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\EMS.Repositories.pdb
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\EMS.Site.csproj.AssemblyReference.cache
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\EMS.Site.GeneratedMSBuildEditorConfig.editorconfig
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\EMS.Site.AssemblyInfoInputs.cache
@@ -375,3 +373,11 @@ D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\refint\EMS.Site.dll
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\EMS.Site.pdb
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\EMS.Site.genruntimeconfig.cache
 D:\Tatvasoft\EMS-MVC\EMS.Site\obj\Debug\net6.0\ref\EMS.Site.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\EMS.Data.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\EMS.Data.pdb
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\EMS.Application.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\Ems.Infrastructure.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\Ems.Infrastructure.pdb
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\EMS.Application.pdb
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\AutoMapper.dll
+D:\Tatvasoft\EMS-MVC\EMS.Site\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

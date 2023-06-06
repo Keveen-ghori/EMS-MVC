@@ -206,7 +206,7 @@ namespace EMS.Site.Areas.Employee.Controllers
                     ModelState.AddModelError("NewPassError", ToastrMessages.EmpDifferentPass);
                     return View(model);
                 }
-                else if (Crypto.VerifyHashedPassword(emp.Password, model.OldPassword))
+                else if (Crypto.VerifyHashedPassword(emp?.Password, model.OldPassword))
                 {
                     emp!.Password = Crypto.HashPassword(model.NewPassword);
                     emp.Password_Updated_At = DateTime.Now;

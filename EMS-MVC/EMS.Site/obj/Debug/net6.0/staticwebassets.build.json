@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gxUbriw3ayuky6seJGhgYoDBV08PwoZxKCROVy5x65I=",
+  "Hash": "aiuk+Ss/KkJVtbd51EC9T/mrL8DZ6o1IQI/isTEyKu8=",
   "Source": "EMS.Site",
   "BasePath": "_content/EMS.Site",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EMS.Site.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\css\\ApiEmpLists.css",
+      "SourceId": "EMS.Site",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\",
+      "BasePath": "_content/EMS.Site",
+      "RelativePath": "Admin/css/ApiEmpLists.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Admin\\css\\ApiEmpLists.css"
     },
     {
       "Identity": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\css\\Dashboard.css",
@@ -170,6 +187,23 @@
       "OriginalItemSpec": "wwwroot\\Admin\\Images\\tom-hanks.png"
     },
     {
+      "Identity": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\ApiCrud.js",
+      "SourceId": "EMS.Site",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\",
+      "BasePath": "_content/EMS.Site",
+      "RelativePath": "Admin/js/ApiCrud.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Admin\\js\\ApiCrud.js"
+    },
+    {
       "Identity": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\BootstrapValidation.js",
       "SourceId": "EMS.Site",
       "SourceType": "Discovered",
@@ -185,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Admin\\js\\BootstrapValidation.js"
+    },
+    {
+      "Identity": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\EmpApiCrud.js",
+      "SourceId": "EMS.Site",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\",
+      "BasePath": "_content/EMS.Site",
+      "RelativePath": "Admin/js/EmpApiCrud.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Admin\\js\\EmpApiCrud.js"
     },
     {
       "Identity": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\Pagination.js",

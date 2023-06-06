@@ -69,7 +69,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EMS.Core\EMS.Core.csproj" />
-    <ProjectReference Include="..\EMS.Repositories\EMS.Repositories.csproj" />
+    <ProjectReference Include="..\Ems.Infrastructure\Ems.Infrastructure.csproj" />
+    <ProjectReference Include="..\EMS.Repositories\EMS.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ce8uQ+56cGozhu09zXvs1DFNT3+lDSdmtRgm9r7srZNrs7BXhYTVLaYorPjBiYbG451/gcK+JkwG/9HhbAsrDw==",
+  "dgSpecHash": "6yGhFrGqbHGcCazMiSQr89quRb7xr52EWEhKVChdg0KNsO7YfDKhcZnZzcj5eaxd30LN9tHuY0dCwdjpQlIYbw==",
   "success": true,
-  "projectFilePath": "D:\\Tatvasoft\\EMS-MVC\\EMS.Repositories\\EMS.Repositories.csproj",
+  "projectFilePath": "D:\\Tatvasoft\\EMS-MVC\\EMS.Repositories\\EMS.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pci101\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.1\\microsoft.entityframeworkcore.7.0.1.nupkg.sha512",
     "C:\\Users\\pci101\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.1\\microsoft.entityframeworkcore.abstractions.7.0.1.nupkg.sha512",

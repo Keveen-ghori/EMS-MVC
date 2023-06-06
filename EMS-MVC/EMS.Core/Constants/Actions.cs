@@ -18,5 +18,8 @@ namespace EMS.Core.Constants
         public const string DeleteEmp = "DeleteEmp";
         public const string LockEmp = "LockEmp";
         public const string Configuration = "Configuration";
+        public const string EmpByApi = "GetEmployeesByApi";
+        public const string SaveEmpByApi = "SaveEmployeesByApi";
+        public const string GetEmpByIdApi = "GetEmployeesByIdApi";
     }
 }

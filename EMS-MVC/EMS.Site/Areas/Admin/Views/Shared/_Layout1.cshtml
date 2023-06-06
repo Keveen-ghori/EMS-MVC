@@ -17,6 +17,7 @@
     <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
     <link href="~/admin/css/Sidemenue.css" rel="stylesheet" />
     <link href="~/admin/css/EmployeeLists.css" rel="stylesheet" />
+    <link href="~/admin/css/ApiEmpLists.css" rel="stylesheet" />
 </head>
 <body>
     <div class="skin-blue-black">
@@ -35,7 +36,7 @@
                 </div>
                 <ul class="dropdown-menu custom_dropdown" aria-labelledby="navbarDropdown">
                     <li>
-                         <div class="user-profile-icon">
+                        <div class="user-profile-icon">
                             <img src="~/Admin/Images/tom-hanks.png" alt="Profile">
                         </div>
                     </li>
@@ -73,10 +74,10 @@
                         </a>
                     </li>
                     <li class="tooltip_nav point04">
-                        <a href="#">
+                        <a asp-action="@Actions.EmpByApi" asp-controller="@Controllors.Home">
                             <i class="fa fa-file" aria-hidden="true"></i>
-                            <span>Documents</span>
-                            <p>Documents</p>
+                            <span>Employee</span>
+                            <p>Employee</p>
                         </a>
                     </li>
                 </ul>
@@ -109,15 +110,18 @@
     <script src="~/toastr.js/toastr.min.js"></script>
     <script src="~/admin/js/SideMenue.js"></script>
     <script src="~/admin/js/Pagination.js"></script>
-    @if (TempData.ContainsKey(ToastrMessages.AdminLoginSuccess))
+    <script src="~/admin/js/EmpApiCrud.js"></script>
+
+
     {
-        <script>
-            toastr.options = {
-                positionClass: 'toast-top-left'
-            };
-            toastr.success('@ToastrMessages.AdminLoginSuccess');
-        </script>
-        @TempData.Remove(ToastrMessages.AdminLoginSuccess)
+
+    <script>
+        toastr.options = {
+            positionClass: 'toast-top-left'
+        };
+        toastr.success('@ToastrMessages.AdminLoginSuccess');
+    </script>
+    @TempData.Remove(ToastrMessages.AdminLoginSuccess)
     }
 
     @if (TempData.ContainsKey(ToastrMessages.AdminSuccessfullyUpdatedPassword))

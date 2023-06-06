@@ -51,8 +51,6 @@ namespace EMS.Site.Areas.Admin.Controllers
         [ActionName(Actions.Register)]
         public async Task<IActionResult> Register()
         {
-            AdminViewModel model = new();
-
             var admin = await _context.Admin.ToListAsync();
 
             if (admin.Count != 0)
@@ -186,12 +184,12 @@ namespace EMS.Site.Areas.Admin.Controllers
                 var AdminId = Convert.ToInt64(HttpContext.Session.GetInt32("AdmnId"));
 
                 var admn = _context.Admin.Where(admn => admn.AdminId == AdminId).FirstOrDefault();
-                if(Crypto.VerifyHashedPassword(admn.Password, model.NewPassword))
+                if(Crypto.VerifyHashedPassword(admn?.Password, model.NewPassword))
                 {
                     ModelState.AddModelError("NewPassError", ToastrMessages.AdminDifferentPass);
                     return View();
                 }
-                else if (Crypto.VerifyHashedPassword(admn.Password, model.OldPassword))
+                else if (Crypto.VerifyHashedPassword(admn?.Password, model.OldPassword))
                 {
                     admn!.Password = Crypto.HashPassword(model.NewPassword);
                     admn.Password_Updated_At = DateTime.Now;

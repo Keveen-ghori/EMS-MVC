@@ -1,0 +1,111 @@
+﻿@using EMS.Application.ViewModels;
+@using EMS.Core.Constants;
+@model Response<List<EmployeeApiVM>>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    #region Data
+    foreach (var item in Model.Content)
+    {
+        <tr>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+            <td>
+                @{
+                    if (item.Gender == 1)
+                    {
+                        <text>Male</text>
+                    }
+                    else if (item.Gender == 2)
+                    {
+                        <text>Female</text>
+                    }
+                    else
+                    {
+                        <text>Unisex</text>
+                    }
+                }
+            </td>
+            <td>@item.DOB?.ToString("dd/MM/yyyy").Replace('-','/')</td>
+            <td>
+                @{
+                    if (item.IsLocked == false)
+                    {
+                        <i class="fa-solid fa-xmark"></i>
+                    }
+                    else
+                    {
+                        <i class="fa-sharp fa-solid fa-check"></i>
+
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    if (item.Status == true)
+                    {
+                        <span class="text-success">Active</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">Inactive</span>
+                    }
+                }
+            </td>
+            <td>@item.Attemps</td>
+            <td>@item.Password_Updated_At?.ToString("dd/MM/yyyy").Replace('-','/')</td>
+            <td>
+                <a class="edit" data-bs-target="#EditEmpApi-@item.EmployeeId" data-bs-toggle="modal" onclick="loadPartialView(@item.EmployeeId)"><i class="fa-solid fa-pencil"></i></a>
+                <a class="delete" data-bs-target="#DeleteEmpApi-@item.EmployeeId" data-bs-toggle="modal"><i class="fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+    }
+    #endregion
+}
+
+
+@foreach (var item in Model.Content)
+{
+
+    <!-- Delete Modal HTML -->
+    <div id="DeleteEmpApi-@item.EmployeeId" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Model</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete these Records?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-danger" onclick="function(@item.EmployeeId)" value="Delete">
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+<script>
+    function loadPartialView(employeeId) {
+        $.ajax({
+            url: '/Home/GetEmployeesByApi',
+            type: 'GET',
+            data: { EmployeeId: employeeId },
+            success: function (partialViewHtml) {
+                $('#EditEmpApi-' + employeeId).find('.modal-body').html(partialViewHtml);
+                $('#EditEmpApi-' + employeeId).modal('show');
+            },
+            error: function () {
+                console.log(error);
+            }
+        });
+    }
+</script>

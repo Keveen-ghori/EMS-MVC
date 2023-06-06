@@ -585,9 +585,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Tatvasoft\\EMS-MVC\\EMS.Repositories\\EMS.Repositories.csproj",
-      "projectName": "EMS.Repositories",
-      "projectPath": "D:\\Tatvasoft\\EMS-MVC\\EMS.Repositories\\EMS.Repositories.csproj",
+      "projectUniqueName": "D:\\Tatvasoft\\EMS-MVC\\EMS.Repositories\\EMS.Data.csproj",
+      "projectName": "EMS.Data",
+      "projectPath": "D:\\Tatvasoft\\EMS-MVC\\EMS.Repositories\\EMS.Data.csproj",
       "packagesPath": "C:\\Users\\pci101\\.nuget\\packages\\",
       "outputPath": "D:\\Tatvasoft\\EMS-MVC\\EMS.Repositories\\obj\\",
       "projectStyle": "PackageReference",

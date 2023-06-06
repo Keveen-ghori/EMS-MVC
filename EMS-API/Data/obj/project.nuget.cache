@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "b+bgLR13LqSLOpoXDILhBZDikU3iqBJEsuIUJL66VDB+CugjzaVdeec7plOGkiinuQXuXHAv1sqgmNsD2i35aA==",
+  "success": true,
+  "projectFilePath": "D:\\Tatvasoft\\EMS-API\\Data\\Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pci101\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\pci101\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\pci101\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

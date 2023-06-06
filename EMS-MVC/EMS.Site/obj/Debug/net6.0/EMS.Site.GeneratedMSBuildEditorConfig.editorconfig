@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxFbXBsb3llZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Tatvasoft/EMS-MVC/EMS.Site/Areas/Admin/Views/Home/GetEmployeesByApi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxHZXRFbXBsb3llZXNCeUFwaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Tatvasoft/EMS-MVC/EMS.Site/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,12 +48,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Tatvasoft/EMS-MVC/EMS.Site/Areas/Admin/Views/Shared/_EmpListsApiPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9FbXBMaXN0c0FwaVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Tatvasoft/EMS-MVC/EMS.Site/Areas/Admin/Views/Shared/_EmpListsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9FbXBMaXN0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Tatvasoft/EMS-MVC/EMS.Site/Areas/Admin/Views/Shared/_EmpPagination.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9FbXBQYWdpbmF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Tatvasoft/EMS-MVC/EMS.Site/Areas/Admin/Views/Shared/_GetElementByIdApi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9HZXRFbGVtZW50QnlJZEFwaS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Tatvasoft/EMS-MVC/EMS.Site/Areas/Admin/Views/Shared/_Layout.cshtml]

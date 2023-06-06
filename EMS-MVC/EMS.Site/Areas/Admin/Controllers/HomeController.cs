@@ -1,4 +1,6 @@
-﻿using EMS.Core.Constants;
+﻿using Ems.Infrastructure.Services.Base;
+using EMS.Application.ViewModels;
+using EMS.Core.Constants;
 using EMS.Repository.EF;
 using EMS.Site.Areas.Admin.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -16,7 +18,7 @@ namespace EMS.Site.Areas.Admin.Controllers
     public class HomeController : Controller
     {
         private readonly EmployeeManagementContext _context;
-        private ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger;
 
         public HomeController(EmployeeManagementContext context, ILogger<HomeController> logger)
         {
@@ -230,9 +232,9 @@ namespace EMS.Site.Areas.Admin.Controllers
         {
             if (HttpContext.Session.GetInt32("AdmnId") != null && HttpContext.Session.GetString("AdmnPassUpdated") == "Yes")
             {
-                var emp = _context.Employees.FirstOrDefault();
+                var emp = _context?.Employees.FirstOrDefault();
                 Employees employee = new();
-                employee.Total_Attemps = emp.Total_Attemps ?? 0;
+                employee.Total_Attemps = emp?.Total_Attemps ?? 0;
                 employee.Exp_Days = emp.Exp_Days;
                 return View(employee);
             }
@@ -255,6 +257,50 @@ namespace EMS.Site.Areas.Admin.Controllers
 
             _context.SaveChanges();
             return RedirectToAction(Actions.Configuration);
+        }
+        #endregion
+
+        #region CRUD Using Web API
+        [HttpGet]
+        [ActionName(Actions.EmpByApi)]
+        public async Task<IActionResult> GetEmployeesByApi()
+        {
+            var employeeService = new EmployeeServiceBase();
+            var emp = await employeeService.GetAllEmployees();
+
+            return View(emp);
+        }
+
+        [HttpPost]
+        [ActionName(Actions.SaveEmpByApi)]
+        public async Task<IActionResult> SaveEmployeesByApi(Response<EmployeeApiVM> model)
+        {
+            var employeeService = new EmployeeServiceBase();
+            if (ModelState.IsValid)
+            {
+                var success = await employeeService.CreateEmployee(model);
+
+                if (success)
+                {
+                    return RedirectToAction(Actions.EmpByApi);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Failed to save employees.");
+                }
+            }
+            return View(Actions.EmpByApi);
+        }
+
+        [HttpGet]
+        [ActionName(Actions.GetEmpByIdApi)]
+        public async Task<IActionResult> GetEmpByIdApi(long EmployeeId)
+        {
+            var employeeService = new EmployeeServiceBase();
+            var model = await employeeService.GetEmployeeByid(EmployeeId);
+
+            return PartialView(PartialViews.GetElementByIdApi, model);
+
         }
         #endregion
     }

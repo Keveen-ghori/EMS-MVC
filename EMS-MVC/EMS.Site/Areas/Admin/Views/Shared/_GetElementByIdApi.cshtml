@@ -1,0 +1,73 @@
+﻿@using EMS.Application.ViewModels;
+@using EMS.Core.Constants;
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Response<EmployeeApiVM>
+<!-- Edit Modal HTML -->
+<div id="EditEmpApi-@Model.Content.EmployeeId" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Employee</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" class="needs-validation" novalidate asp-controller="@Controllors.Home" asp-action="@Actions.SaveEmpByApi">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input class="form-control" asp-for="@Model.Content.FirstName" required>
+                        <span class="text-danger" asp-validation-for="@Model.Content.FirstName"></span>
+                        <div class="invalid-feedback"> Field is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input asp-for="@Model.Content.Lastname" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input class="form-control" asp-for="@Model.Content.DOB" required>
+                        <span class="text-danger" asp-validation-for="@Model.Content.DOB"></span>
+                        <div class="invalid-feedback"> Field is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select class="form-control" asp-for="@Model.Content.Gender">
+                            <option value="">Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Frmale</option>
+                            <option value="3">Unisex</option>
+                        </select>
+                        <span class="text-danger" asp-validation-for="@Model.Content.Gender"></span>
+                        <div class="invalid-feedback"> Field is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="form-control" asp-for="@Model.Content.Status">
+                            <option value="">Status</option>
+                            <option value="true">Active</option>
+                            <option value="false">InActive</option>
+                        </select>
+                        <span class="text-danger" asp-validation-for="@Model.Content.Status"></span>
+                        <div class="invalid-feedback"> Field is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label>IsLocked</label>
+                        <select class="form-control" asp-for="@Model.Content.IsLocked">
+                            <option value="">Change Lock</option>
+                            <option value="true">Lock</option>
+                            <option value="false">Unlock</option>
+                        </select>
+                        <span class="text-danger" asp-validation-for="@Model.Content.IsLocked"></span>
+                        <div class="invalid-feedback"> Field is required</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <button type="submit" class="btn btn-warning">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

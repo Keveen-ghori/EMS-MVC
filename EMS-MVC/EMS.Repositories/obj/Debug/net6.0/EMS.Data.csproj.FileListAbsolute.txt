@@ -1,0 +1,15 @@
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\bin\Debug\net6.0\EMS.Data.deps.json
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\bin\Debug\net6.0\EMS.Data.dll
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\bin\Debug\net6.0\EMS.Data.pdb
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\bin\Debug\net6.0\EMS.Core.dll
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\bin\Debug\net6.0\EMS.Core.pdb
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\obj\Debug\net6.0\EMS.Data.csproj.AssemblyReference.cache
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\obj\Debug\net6.0\EMS.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\obj\Debug\net6.0\EMS.Data.AssemblyInfoInputs.cache
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\obj\Debug\net6.0\EMS.Data.AssemblyInfo.cs
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\obj\Debug\net6.0\EMS.Data.csproj.CoreCompileInputs.cache
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\obj\Debug\net6.0\EMS.Data.csproj.CopyComplete
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\obj\Debug\net6.0\EMS.Data.dll
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\obj\Debug\net6.0\refint\EMS.Data.dll
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\obj\Debug\net6.0\EMS.Data.pdb
+D:\Tatvasoft\EMS-MVC\EMS.Repositories\obj\Debug\net6.0\ref\EMS.Data.dll

@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\Admin\\Images\\tom-hanks.png"
     },
     {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\css\\ApiEmpLists.css",
+      "PackagePath": "staticwebassets\\Admin\\css\\ApiEmpLists.css"
+    },
+    {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\css\\Dashboard.css",
       "PackagePath": "staticwebassets\\Admin\\css\\Dashboard.css"
     },
@@ -33,8 +37,16 @@
       "PackagePath": "staticwebassets\\Admin\\css\\Sidemenue.css"
     },
     {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\ApiCrud.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\ApiCrud.js"
+    },
+    {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\BootstrapValidation.js",
       "PackagePath": "staticwebassets\\Admin\\js\\BootstrapValidation.js"
+    },
+    {
+      "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\EmpApiCrud.js",
+      "PackagePath": "staticwebassets\\Admin\\js\\EmpApiCrud.js"
     },
     {
       "Id": "D:\\Tatvasoft\\EMS-MVC\\EMS.Site\\wwwroot\\Admin\\js\\Pagination.js",
