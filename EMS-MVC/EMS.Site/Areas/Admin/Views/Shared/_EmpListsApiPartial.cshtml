@@ -57,7 +57,7 @@
             <td>@item.Attemps</td>
             <td>@item.Password_Updated_At?.ToString("dd/MM/yyyy").Replace('-','/')</td>
             <td>
-                <a class="edit" data-bs-target="#EditEmpApi-@item.EmployeeId" data-bs-toggle="modal" onclick="loadPartialView(@item.EmployeeId)"><i class="fa-solid fa-pencil"></i></a>
+                <a class="edit" data-bs-toggle="modal" onclick="loadPartialView(@item.EmployeeId)"><i class="fa-solid fa-pencil"></i></a>
                 <a class="delete" data-bs-target="#DeleteEmpApi-@item.EmployeeId" data-bs-toggle="modal"><i class="fa-solid fa-trash"></i></a>
             </td>
         </tr>
@@ -65,6 +65,7 @@
     #endregion
 }
 
+<div id="EditModel"></div>
 
 @foreach (var item in Model.Content)
 {
@@ -83,29 +84,10 @@
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
-                    <input type="submit" class="btn btn-danger" onclick="function(@item.EmployeeId)" value="Delete">
+                    <button class="btn btn-danger" onclick="DeleteEmpApi(@item.EmployeeId)">Delete</button>
                 </div>
             </div>
         </div>
     </div>
 
 }
-
-
-
-<script>
-    function loadPartialView(employeeId) {
-        $.ajax({
-            url: '/Home/GetEmployeesByApi',
-            type: 'GET',
-            data: { EmployeeId: employeeId },
-            success: function (partialViewHtml) {
-                $('#EditEmpApi-' + employeeId).find('.modal-body').html(partialViewHtml);
-                $('#EditEmpApi-' + employeeId).modal('show');
-            },
-            error: function () {
-                console.log(error);
-            }
-        });
-    }
-</script>

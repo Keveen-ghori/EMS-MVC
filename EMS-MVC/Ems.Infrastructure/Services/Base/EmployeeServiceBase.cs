@@ -77,14 +77,14 @@ namespace Ems.Infrastructure.Services.Base
 
         }
 
-        public async Task<bool> CreateEmployee(Response<EmployeeApiVM> model)
+        public async Task<bool> UpdateEmployee(Response<EmployeeApiVM> model, long EmployeeId)
         {
             var employeeData = model.Content;
             var json = string.Empty;
             try
             {
                 var url = string.Empty;
-                url = $"CreateEmp";
+                url = $"UpdateEmp/{EmployeeId}";
                 json = JsonConvert.SerializeObject(employeeData);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -100,6 +100,31 @@ namespace Ems.Infrastructure.Services.Base
             {
                 return false;
             }
+
+        }
+
+        public async Task<Response<StatusCodeViewModel>> DeleyeEmployeeByid(long Employeeid)
+        {
+            var empData = new Response<StatusCodeViewModel>();
+            var json = string.Empty;
+            try
+            {
+                var url = string.Empty;
+                url = $"DeleteEmp/{Employeeid}";
+                var results = await EmployeeServiceBase._httpClient.DeleteAsync(url).ConfigureAwait(false);
+
+                if (results.IsSuccessStatusCode)
+                {
+                    json = await results.Content.ReadAsStringAsync().ConfigureAwait(false);
+                    empData = JsonConvert.DeserializeObject<Response<StatusCodeViewModel>>(json);
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            return empData ?? new Response<StatusCodeViewModel>();
 
         }
     }

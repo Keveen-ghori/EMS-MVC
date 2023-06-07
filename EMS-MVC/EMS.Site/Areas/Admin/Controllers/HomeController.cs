@@ -278,7 +278,7 @@ namespace EMS.Site.Areas.Admin.Controllers
             var employeeService = new EmployeeServiceBase();
             if (ModelState.IsValid)
             {
-                var success = await employeeService.CreateEmployee(model);
+                var success = await employeeService.UpdateEmployee(model, model.Content.EmployeeId);
 
                 if (success)
                 {
@@ -289,17 +289,36 @@ namespace EMS.Site.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Failed to save employees.");
                 }
             }
-            return View(Actions.EmpByApi);
+            var responseModel = new Response<EmployeeApiVM>
+            {
+                Content = model.Content,
+                Messages = ModelState.Values
+           .SelectMany(v => v.Errors)
+           .Select(e => e.ErrorMessage)
+           .ToList()
+            };
+
+            return PartialView(PartialViews.GetElementByIdApi, responseModel);
         }
 
         [HttpGet]
         [ActionName(Actions.GetEmpByIdApi)]
-        public async Task<IActionResult> GetEmpByIdApi(long EmployeeId)
+        public async Task<IActionResult> GetEmployeesByIdApi(long EmployeeId)
         {
             var employeeService = new EmployeeServiceBase();
             var model = await employeeService.GetEmployeeByid(EmployeeId);
 
             return PartialView(PartialViews.GetElementByIdApi, model);
+
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteEmpByIdApi(long EmployeeId)
+        {
+            var employeeService = new EmployeeServiceBase();
+           var status = await employeeService.DeleyeEmployeeByid(EmployeeId);
+
+            return Json(new { success = status.Success });
 
         }
         #endregion
