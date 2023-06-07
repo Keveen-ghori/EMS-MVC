@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Tatvasoft/EMS-MVC/EMS.Site/Areas/Admin/Views/Shared/_AddEmpApiModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZGRFbXBBcGlNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Tatvasoft/EMS-MVC/EMS.Site/Areas/Admin/Views/Shared/_EmpListsApiPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9FbXBMaXN0c0FwaVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

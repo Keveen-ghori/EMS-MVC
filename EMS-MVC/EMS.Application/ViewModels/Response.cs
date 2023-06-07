@@ -12,7 +12,7 @@ namespace EMS.Application.ViewModels
         public HttpStatusCode StatusCode { get; set; } = HttpStatusCode.OK;
         public List<string> Messages { get; set; } = new List<string>();
         public bool Success { get; set; }
-        public T Content { get; set; }
+        public T? Content { get; set; }
 
     }
 }

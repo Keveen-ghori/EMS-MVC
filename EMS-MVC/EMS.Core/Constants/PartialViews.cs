@@ -11,5 +11,6 @@ namespace EMS.Core.Constants
         public const string _EmpListsPartial = "_EmpListsPartial";
         public const string _EmpPagination = "_EmpPagination";
         public const string GetElementByIdApi = "_GetElementByIdApi";
+        public const string AddEmpApiModal = "_AddEmpApiModal";
     }
 }

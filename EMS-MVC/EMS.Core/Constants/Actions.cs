@@ -21,5 +21,7 @@ namespace EMS.Core.Constants
         public const string EmpByApi = "GetEmployeesByApi";
         public const string SaveEmpByApi = "SaveEmployeesByApi";
         public const string GetEmpByIdApi = "GetEmployeesByIdApi";
+        public const string CreateEmpByApiPartial = "CreateEmpByApiPartial";
+        public const string CreateEmpByApi = "CreateEmpByApi";
     }
 }

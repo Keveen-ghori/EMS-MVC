@@ -27,9 +27,11 @@ namespace EMS.Application.ViewModels
         [DataMember]
         [Required(ErrorMessage = SystemMessages.PasswordRequired)]
         [RegularExpression(RegularExpression.Password, ErrorMessage = SystemMessages.PasswordValidation)]
+        [DataType(DataType.Password)]
         public string Password { get; set; } = String.Empty;
         [Required(ErrorMessage = SystemMessages.ConfirmPasswordRequired)]
         [Compare(nameof(Password))]
+        [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; } = String.Empty;
         [DataMember]
         [Required(ErrorMessage = SystemMessages.DOB)]

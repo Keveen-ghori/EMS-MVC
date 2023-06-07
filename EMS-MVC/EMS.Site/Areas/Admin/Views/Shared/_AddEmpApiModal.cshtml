@@ -1,0 +1,70 @@
+﻿@using EMS.Application.ViewModels;
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model CreateEmpViewModel;
+<div id="AddEmpModal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Employee</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="needs-validation" novalidate id="CreateEmployeeModalForm">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label asp-for="@Model.FirstName" class="form-label"></label>
+                        <input class="form-control" asp-for="@Model.FirstName" required>
+                        <span class="text-danger" asp-validation-for="@Model.FirstName"></span>
+                        <div class="invalid-feedback">Field is required.</div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.LastName" class="form-label"></label>
+                        <input asp-for="@Model.LastName" class="form-control" required>
+                        <span class="text-danger" asp-validation-for="@Model.LastName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Email" class="form-label"></label>
+                        <input asp-for="@Model.Email" class="form-control" required>
+                        <span class="text-danger" asp-validation-for="@Model.Email"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.DOB" class="form-label"></label>
+                        <input class="form-control" asp-for="@Model.DOB" required>
+                        <span class="text-danger" asp-validation-for="@Model.DOB"></span>
+                        <div class="invalid-feedback">Field is required.</div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Gender" class="form-label"></label>
+                        <select class="form-control" asp-for="@Model.Gender">
+                            <option value="">Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Frmale</option>
+                            <option value="3">Unisex</option>
+                        </select>
+                        <span class="text-danger" asp-validation-for="@Model.Gender"></span>
+                        <div class="invalid-feedback">Field is required.</div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Password" class="form-label"></label>
+                        <input class="form-control" asp-for="@Model.Password" required/>
+                        <span class="text-danger" asp-validation-for="@Model.Password"></span>
+                        <div class="invalid-feedback">Field is required.</div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.ConfirmPassword" class="form-label"></label>
+                        <input class="form-control" asp-for="@Model.ConfirmPassword" required />
+                        <span class="text-danger" asp-validation-for="@Model.ConfirmPassword"></span>
+                        <div class="invalid-feedback">Field is required.</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
+                    <button type="button" onclick="AddNewEmpApi(event)" class="btn btn-success">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

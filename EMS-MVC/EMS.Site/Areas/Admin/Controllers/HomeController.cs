@@ -271,14 +271,14 @@ namespace EMS.Site.Areas.Admin.Controllers
             return View(emp);
         }
 
-        [HttpPost]
+        [HttpPut]
         [ActionName(Actions.SaveEmpByApi)]
         public async Task<IActionResult> SaveEmployeesByApi(Response<EmployeeApiVM> model)
         {
             var employeeService = new EmployeeServiceBase();
             if (ModelState.IsValid)
             {
-                var success = await employeeService.UpdateEmployee(model, model.Content.EmployeeId);
+                var success = await employeeService.UpdateEmployee(model, model?.Content.EmployeeId);
 
                 if (success)
                 {
@@ -293,12 +293,13 @@ namespace EMS.Site.Areas.Admin.Controllers
             {
                 Content = model.Content,
                 Messages = ModelState.Values
-           .SelectMany(v => v.Errors)
-           .Select(e => e.ErrorMessage)
-           .ToList()
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList()
             };
 
             return PartialView(PartialViews.GetElementByIdApi, responseModel);
+
         }
 
         [HttpGet]
@@ -312,14 +313,47 @@ namespace EMS.Site.Areas.Admin.Controllers
 
         }
 
+
+        [HttpGet]
+        [ActionName(Actions.CreateEmpByApiPartial)]
+        public IActionResult CreateEmpByApiPartial()
+        {
+            CreateEmpViewModel model = new();
+
+            return PartialView(PartialViews.AddEmpApiModal, model);
+
+        }
+
         [HttpDelete]
         public async Task<IActionResult> DeleteEmpByIdApi(long EmployeeId)
         {
             var employeeService = new EmployeeServiceBase();
-           var status = await employeeService.DeleyeEmployeeByid(EmployeeId);
+            var status = await employeeService.DeleyeEmployeeByid(EmployeeId);
 
             return Json(new { success = status.Success });
 
+        }
+
+        [HttpPost]
+        [ActionName(Actions.CreateEmpByApi)]
+        public async Task<IActionResult> CreateEmpByApi(CreateEmpViewModel model)
+        {
+            var employeeService = new EmployeeServiceBase();
+            if (ModelState.IsValid)
+            {
+                var success = await employeeService.CreateEmpApi(model);
+
+                if (success)
+                {
+                    return RedirectToAction(Actions.EmpByApi);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Failed to save employees.");
+                }
+            }
+
+            return PartialView(PartialViews.GetElementByIdApi, model);
         }
         #endregion
     }

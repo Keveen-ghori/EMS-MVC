@@ -88,7 +88,8 @@ namespace Ems.Infrastructure.Services.Base
                 json = JsonConvert.SerializeObject(employeeData);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var response = await EmployeeServiceBase._httpClient.PostAsync(url, content).ConfigureAwait(false);
+                var response = await EmployeeServiceBase._httpClient.PutAsync(url, content).ConfigureAwait(false);
+
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -127,5 +128,33 @@ namespace Ems.Infrastructure.Services.Base
             return empData ?? new Response<StatusCodeViewModel>();
 
         }
+
+        public async Task<bool> CreateEmpApi(CreateEmpViewModel model)
+        {
+            var employeeData = model;
+            var json = string.Empty;
+            try
+            {
+                var url = string.Empty;
+                url = $"CreateEmp";
+                json = JsonConvert.SerializeObject(employeeData);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await EmployeeServiceBase._httpClient.PostAsync(url, content).ConfigureAwait(false);
+
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+
     }
 }
