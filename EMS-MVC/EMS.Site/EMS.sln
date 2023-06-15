@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMS.Core", "..\EMS.Core\EMS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMS.Data", "..\EMS.Repositories\EMS.Data.csproj", "{F61C3DE0-DB59-4A9A-897E-1DEA1501657B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.Application", "..\EMS.Application\EMS.Application.csproj", "{3E759E4C-0DA2-411C-9355-19F7026F091F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMS.Application", "..\EMS.Application\EMS.Application.csproj", "{3E759E4C-0DA2-411C-9355-19F7026F091F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ems.Infrastructure", "..\Ems.Infrastructure\Ems.Infrastructure.csproj", "{987C38B5-69E9-4370-A3AB-1690AA81A1B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ems.Infrastructure", "..\Ems.Infrastructure\Ems.Infrastructure.csproj", "{987C38B5-69E9-4370-A3AB-1690AA81A1B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

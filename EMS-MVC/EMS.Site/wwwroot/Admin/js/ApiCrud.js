@@ -47,7 +47,11 @@ function UpdateEmpApi(event, EmployeeId) {
 
             $('#EditModel').html(response);
             $("#EditEmpApi-" + EmployeeId).modal("hide");
+            $("#EditEmpApi-" + EmployeeId).modal({
+                show: 'false'
+            }); 
             console.log(response);
+            location.reload();
         },
         error: function (xhr, status, error) {
             console.log(error);
@@ -67,6 +71,9 @@ function DeleteEmpApi(EmployeeId) {
             if (data.success) {
                 alert('Employee deleted successfully!');
                 $("#DeleteEmpApi-" + EmployeeId).modal("hide");
+                $("#DeleteEmpApi-" + EmployeeId).modal({
+                    show: 'false'
+                });
                 location.reload();
             }
             else {

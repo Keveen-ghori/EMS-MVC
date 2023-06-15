@@ -278,7 +278,7 @@ namespace EMS.Site.Areas.Admin.Controllers
             var employeeService = new EmployeeServiceBase();
             if (ModelState.IsValid)
             {
-                var success = await employeeService.UpdateEmployee(model, model?.Content.EmployeeId);
+                var success = await employeeService.UpdateEmployee(model, model.Content.EmployeeId);
 
                 if (success)
                 {
@@ -330,7 +330,7 @@ namespace EMS.Site.Areas.Admin.Controllers
             var employeeService = new EmployeeServiceBase();
             var status = await employeeService.DeleyeEmployeeByid(EmployeeId);
 
-            return Json(new { success = status.Success });
+            return Json(new { success = status });
 
         }
 

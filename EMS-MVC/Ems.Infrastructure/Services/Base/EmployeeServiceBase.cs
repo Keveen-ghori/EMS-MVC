@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,28 +15,25 @@ namespace Ems.Infrastructure.Services.Base
     public class EmployeeServiceBase
     {
         private static HttpClient _httpClient;
-
         static EmployeeServiceBase()
         {
             EmployeeServiceBase._httpClient = new HttpClient
             {
-                BaseAddress = new Uri(CommonSettings.EmployeeBaseUrl),
+                BaseAddress = new Uri(CommonSettings.EmployeeWcfClient),
                 //Timeout = TimeSpan.FromSeconds(15)
             };
         }
 
         public async Task<Response<List<EmployeeApiVM>>> GetAllEmployees()
         {
-
             var empList = new Response<List<EmployeeApiVM>>();
             var json = string.Empty;
             try
             {
                 var url = string.Empty;
-                url = $"GetAllEmployees";
+                url = $"Employees";
 
                 var results = await EmployeeServiceBase._httpClient.GetAsync(url).ConfigureAwait(false);
-
                 if (results.IsSuccessStatusCode)
                 {
                     json = await results.Content.ReadAsStringAsync().ConfigureAwait(false);
@@ -59,7 +57,7 @@ namespace Ems.Infrastructure.Services.Base
             try
             {
                 var url = string.Empty;
-                url = $"GetEmpById/{Employeeid}";
+                url = $"Employee/{Employeeid}";
                 var results = await EmployeeServiceBase._httpClient.GetAsync(url).ConfigureAwait(false);
 
                 if (results.IsSuccessStatusCode)
@@ -84,7 +82,7 @@ namespace Ems.Infrastructure.Services.Base
             try
             {
                 var url = string.Empty;
-                url = $"UpdateEmp/{EmployeeId}";
+                url = $"UpdateEmployee/{EmployeeId}";
                 json = JsonConvert.SerializeObject(employeeData);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -104,28 +102,29 @@ namespace Ems.Infrastructure.Services.Base
 
         }
 
-        public async Task<Response<StatusCodeViewModel>> DeleyeEmployeeByid(long Employeeid)
+        public async Task<bool> DeleyeEmployeeByid(long Employeeid)
         {
-            var empData = new Response<StatusCodeViewModel>();
-            var json = string.Empty;
+            var empData = new bool();
             try
             {
                 var url = string.Empty;
-                url = $"DeleteEmp/{Employeeid}";
+                url = $"EmployeeDelete/{Employeeid}";
                 var results = await EmployeeServiceBase._httpClient.DeleteAsync(url).ConfigureAwait(false);
 
                 if (results.IsSuccessStatusCode)
                 {
-                    json = await results.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    empData = JsonConvert.DeserializeObject<Response<StatusCodeViewModel>>(json);
+                    if (results.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        empData = true;
+                    }
                 }
             }
             catch (Exception e)
             {
-                return null;
+                return false;
             }
 
-            return empData ?? new Response<StatusCodeViewModel>();
+            return empData;
 
         }
 
@@ -136,7 +135,7 @@ namespace Ems.Infrastructure.Services.Base
             try
             {
                 var url = string.Empty;
-                url = $"CreateEmp";
+                url = $"CreateEmployee";
                 json = JsonConvert.SerializeObject(employeeData);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 

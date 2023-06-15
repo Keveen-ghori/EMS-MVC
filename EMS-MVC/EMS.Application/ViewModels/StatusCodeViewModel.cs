@@ -8,6 +8,6 @@ namespace EMS.Application.ViewModels
 {
     public class StatusCodeViewModel
     {
-        public int CostatusCodede { get; set; }
+        public bool Content { get; set; }
     }
 }

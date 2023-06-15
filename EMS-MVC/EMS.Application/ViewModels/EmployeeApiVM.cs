@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -21,7 +22,8 @@ namespace EMS.Application.ViewModels
         [DataMember]
         public string Email { get; set; } = string.Empty;
         [DataMember]
-        public DateTime? DOB { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime? DOB { get; set; } = new DateTime(2022, 06, 15);
         [DataMember]
         public byte Gender { get; set; } 
         [DataMember]
